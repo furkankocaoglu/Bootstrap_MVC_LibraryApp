@@ -1,0 +1,25 @@
+﻿@using bootstrapmvc.Models;
+@{
+    Manager m = new Manager();
+    if (Session["ManagerSession"] != null)
+    {
+        m = Session["ManagerSession"] as Manager;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <a href="@Url.Action("LogOut","Login")">Çıkış Yap</a>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

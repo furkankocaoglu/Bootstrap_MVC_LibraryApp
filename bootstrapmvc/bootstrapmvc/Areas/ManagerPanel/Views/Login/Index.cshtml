@@ -1,0 +1,59 @@
+﻿@model bootstrapmvc.Areas.ManagerPanel.Data.ManagerLoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş Ekranı</title>
+    <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container mt-3" style="text-align: center;">
+        <h3>Yönetici Giriş Ekranına Hoşgeldiniz..</h3>
+    </div>
+    <div class="container">
+        <div class="mt-5" style="text-align: center;">
+            <img src="@Url.Content("~/Areas/ManagerPanel/Gorseller/1487184215-yonetici-ekrani.jpg")"  class="img-fluid" />
+        </div>
+    </div>
+    <div class="container mt-5">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            if (!string.IsNullOrEmpty(ViewBag.mesaj))
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.mesaj
+                </div>
+            }
+
+            if (!ViewData.ModelState.IsValid)
+            {
+                @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+            }
+            <div class="mt-3">
+                @Html.EditorFor(x => x.Mail, "", new { htmlAttributes = new { @class = "form-control", @placeholder = "Mail Adresiniz" } })
+            </div>
+
+            <div class="mt-3">
+                @Html.EditorFor(x => x.Password, "", new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifreniz" } })
+            </div>
+
+            <div class="form-check mt-3">
+                @Html.EditorFor(x => x.RememberMe, new { htmlAttributes = new { @class = "form-check-input", id = "RememberMe" } })
+                <label class="form-check-label" for="RememberMe"></label>
+            </div>
+
+            <div class="mt-4">
+                <input type="submit" value="Giriş Yap" class="btn btn-outline-success" />
+            </div>
+        }
+    </div>
+    <script src="~/Scripts/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
