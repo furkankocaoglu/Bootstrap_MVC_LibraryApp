@@ -13,13 +13,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("styles", false)
 </head>
 <body>
-    <div>
-        <a href="@Url.Action("LogOut","Login")">Çıkış Yap</a>
+    <div class="alert alert-success">
+        <strong>Hoşgeldin @m.Name!</strong>
+        <a href="@Url.Action("LogOut", "Login")" class="btn btn-success btn-sm float-end rounded">
+            <span class="spinner-border spinner-border-sm"></span>
+            Çıkış
+        </a>
     </div>
-    <div>
+    <div class="mt-2">
+        <nav class="nav flex-column">
+            <a class="nav-link p-1" href="@Url.Action("Index", "Home")">Anasayfa</a>
+        </nav>
+    </div>
+    <div class="container mt-4">
         @RenderBody()
     </div>
+    <div class="clearfix"></div>
+    @RenderSection("scripts", false)
+    <script src="~/Scripts/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

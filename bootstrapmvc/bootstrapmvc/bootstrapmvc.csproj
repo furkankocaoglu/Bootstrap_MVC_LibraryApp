@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ManagerPanel\Controllers\BookController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\HomeController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
     <Compile Include="Areas\ManagerPanel\Data\ManagerLoginViewModel.cs" />
@@ -134,6 +135,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManagerRole.cs" />
@@ -178,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ManagerPanel\Views\Book\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>

@@ -14,6 +14,8 @@ namespace bootstrapmvc.Models
         public DbSet<ManagerRole> ManagerRoles { get; set; }
         public DbSet<Manager> Managers { get; set; }
 
+        public DbSet<Book> Books { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
