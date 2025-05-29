@@ -7,6 +7,7 @@
     }
 }
 
+
 <!DOCTYPE html>
 
 <html>
@@ -14,6 +15,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet" />
     @RenderSection("styles", false)
 </head>
 <body>
@@ -27,6 +29,9 @@
     <div class="mt-2">
         <nav class="nav flex-column">
             <a class="nav-link p-1" href="@Url.Action("Index", "Home")">Anasayfa</a>
+        </nav>
+        <nav class="nav flex-column">
+            <a class="nav-link p-1" href="@Url.Action("Index", "Book")">Kitap Listesi</a>
         </nav>
     </div>
     <div class="container mt-4">

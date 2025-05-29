@@ -1,0 +1,47 @@
+﻿@model List<bootstrapmvc.Models.Book>
+@{
+    ViewBag.Title = "_Index";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Silinmiş Kitap Listesi</h4>
+        </div>
+        <div class="card-footer">
+            <span>@Model.Count kitap listeleniyor</span>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>İsim</th>
+                        <th>Aktif Mi?</th>
+                        <th>Aktif Et</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Model)
+                    {
+                        <tr>
+                            <td>@book.ID</td>
+                            <td>@book.Name</td>
+                            <td>@(book.IsActive ? "Evet" : "Hayır")</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="@Url.Action("Back", "Book", new { id = book.ID, area = "ManagerPanel" })"
+                                       class="btn btn-success"
+                                       title="Aktifleştir"
+                                       onclick="return confirm('Aktif etmek istediğinize emin misiniz?');">
+                                        <i class="fa-solid fa-rotate-left text-white"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

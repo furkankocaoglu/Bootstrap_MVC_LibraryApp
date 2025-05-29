@@ -1,29 +1,115 @@
-﻿using System;
+﻿using bootstrapmvc.Areas.ManagerPanel.Filters;
+using bootstrapmvc.Models;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebSockets;
 
 namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 {
+
+    [ManagerLoginRequiredFilter]
     public class BookController : Controller
     {
-        // GET: ManagerPanel/Book
+        Model1 db = new Model1();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.Books.Where(x => x.IsDeleted == false).ToList());
         }
-        public ActionResult Index1()
+        public ActionResult _Index()
+        {
+            return View(db.Books.Where(x => x.IsDeleted == true).ToList());
+        }
+        [HttpGet]
+        public ActionResult Create()
         {
             return View();
         }
-        public ActionResult Index2()
+        [HttpPost]
+        public ActionResult Create(Book model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Books.Add(model);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Book");
+
+                }
+                catch
+                {
+                    ViewBag.mesaj = "Bir hata oluştu";
+                }
+            }
+            return View(model);
         }
-        public ActionResult Index3()
+        [HttpGet]
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                Book c = db.Books.Find(id);
+                if (c != null)
+                {
+                    return View(c);
+                }
+            }
+            return RedirectToAction("Index", "Book");
+
+        }
+        [HttpPost]
+        public ActionResult Edit(Book model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["mesaj"] = "Kitap güncelleme başarılı";
+                    return RedirectToAction("Index", "Book");
+                }
+                catch
+                {
+                    ViewBag.mesaj = "Bir hata oluştu";
+                }
+            }
+            return View(model);
+        }
+        public ActionResult Delete(int? id)
+        {
+            if (id != null)
+            {
+                Book c = db.Books.Find(id);
+                if (c != null)
+                {
+                    c.IsDeleted = true;
+                    c.IsActive = false;
+                    db.SaveChanges();
+                    TempData["mesaj"] = "Kitap silme işlemi başarılı";
+                }
+            }
+            return RedirectToAction("Index", "Book");
+        }
+        public ActionResult Back(int? id)
+        {
+            if (id != null)
+            {
+                Book c = db.Books.Find(id);
+                if (c != null)
+                {
+                    c.IsDeleted = false;
+                    c.IsActive = true;
+                    db.SaveChanges();
+                    TempData["mesaj"] = "Kitap aktif etme işlemi başarılı";
+                }
+            }
+            return RedirectToAction("Index", "Book");
         }
     }
 }

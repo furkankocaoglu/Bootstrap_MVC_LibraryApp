@@ -1,0 +1,33 @@
+﻿@model bootstrapmvc.Models.Book
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title mb-0">
+                <span class="badge bg-success">Kitap Ekleme Sayfası</span>
+            </h4>
+        </div>
+
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                if (ViewBag.mesaj != null)
+                {
+                    <div class="alert alert-info">@ViewBag.mesaj</div>
+                }
+
+                <div class="mb-3">
+                    <label for="Name" class="form-label"><strong>Yeni Kitap İsmi</strong></label>
+                    @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">Kitap Ekle</button>
+            }
+        </div>
+    </div>
+</div>

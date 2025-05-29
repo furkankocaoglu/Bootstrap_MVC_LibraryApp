@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Giriş Ekranı</title>
+    <title>ManagerLogin</title>
     <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -17,7 +17,7 @@
     </div>
     <div class="container">
         <div class="mt-5" style="text-align: center;">
-            <img src="@Url.Content("~/Areas/ManagerPanel/Gorseller/1487184215-yonetici-ekrani.jpg")"  class="img-fluid" />
+            <img src="@Url.Content("~/Areas/ManagerPanel/Gorseller/1487184215-yonetici-ekrani.jpg")"  class="img-thumbnail" />
         </div>
     </div>
     <div class="container mt-5">
@@ -46,11 +46,11 @@
 
             <div class="form-check mt-3">
                 @Html.EditorFor(x => x.RememberMe, new { htmlAttributes = new { @class = "form-check-input", id = "RememberMe" } })
-                <label class="form-check-label" for="RememberMe"></label>
+                <label class="form-check-label" for="RememberMe"><strong>Beni hatırla</strong></label>
             </div>
 
             <div class="mt-3">
-                <input type="submit" value="Giriş Yap" class="btn btn-outline-success" />
+                <input type="submit" value="Giriş Yap" class="btn btn-outline-dark" />
             </div>
         }
     </div>
