@@ -9,7 +9,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ManagerLogin</title>
-    <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/Scripts/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container mt-3" style="text-align: center;">
@@ -17,7 +18,7 @@
     </div>
     <div class="container">
         <div class="mt-5" style="text-align: center;">
-            <img src="@Url.Content("~/Areas/ManagerPanel/Gorseller/1487184215-yonetici-ekrani.jpg")"  class="img-thumbnail" />
+            <img src="@Url.Content("~/Areas/ManagerPanel/Gorseller/1487184215-yonetici-ekrani.jpg")" class="img-thumbnail" />
         </div>
     </div>
     <div class="container mt-5">
@@ -36,12 +37,19 @@
             {
                 @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
             }
+
             <div class="mt-3">
-                @Html.EditorFor(x => x.Mail, "", new { htmlAttributes = new { @class = "form-control", @placeholder = "Mail Adresiniz" } })
+                <label for="Mail" class="form-label">
+                    <i class="fa-solid fa-envelope"></i> Mail Adresiniz
+                </label>
+                @Html.EditorFor(x => x.Mail, new { htmlAttributes = new { @class = "form-control", @id = "Mail" } })
             </div>
 
             <div class="mt-3">
-                @Html.EditorFor(x => x.Password, "", new { htmlAttributes = new { @class = "form-control", @placeholder = "Şifreniz" } })
+                <label for="Password" class="form-label">
+                    <i class="fa-solid fa-lock"></i> Şifreniz
+                </label>
+                @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "form-control", @id = "Password" } })
             </div>
 
             <div class="form-check mt-3">
@@ -50,7 +58,9 @@
             </div>
 
             <div class="mt-3">
-                <input type="submit" value="Giriş Yap" class="btn btn-outline-dark" />
+                <button type="submit" class="btn btn-outline-dark">
+                    <i class="fa fa-sign-in-alt"></i> Giriş Yap
+                </button>
             </div>
         }
     </div>

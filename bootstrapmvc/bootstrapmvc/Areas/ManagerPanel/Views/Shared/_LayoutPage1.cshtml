@@ -7,7 +7,6 @@
     }
 }
 
-
 <!DOCTYPE html>
 
 <html>
@@ -20,18 +19,28 @@
 </head>
 <body>
     <div class="alert alert-success">
-        <strong>Hoşgeldin @m.Name!</strong>
-        <a href="@Url.Action("LogOut", "Login")" class="btn btn-success btn-sm float-end rounded">
-            <span class="spinner-border spinner-border-sm"></span>
-            Çıkış
+        <strong><i class="fa-solid fa-user"></i> Hoşgeldin @m.Name!</strong>
+        <a href="@Url.Action("LogOut", "Login")"
+           class="btn btn-success btn-sm float-end rounded"
+           onclick="return confirm('Çıkış yapmak istediğinize emin misiniz?');">
+            <i class="fa-solid fa-right-from-bracket"></i> Çıkış
         </a>
     </div>
     <div class="mt-2">
         <nav class="nav flex-column">
-            <a class="nav-link p-1" href="@Url.Action("Index", "Home")">Anasayfa</a>
+            <a class="nav-link p-1" href="@Url.Action("Index", "Home")">
+                <i class="fa-solid fa-house"></i> Anasayfa
+            </a>
         </nav>
         <nav class="nav flex-column">
-            <a class="nav-link p-1" href="@Url.Action("Index", "Book")">Kitap Listesi</a>
+            <a class="nav-link p-1" href="@Url.Action("Index", "Dashboard")">
+                <i class="fa-solid fa-chart-line"></i> Dashboard
+            </a>
+        </nav>
+        <nav class="nav flex-column">
+            <a class="nav-link p-1" href="@Url.Action("Index", "Book")">
+                <i class="fa-solid fa-book"></i> Kitap Listesi
+            </a>
         </nav>
     </div>
     <div class="container mt-4">

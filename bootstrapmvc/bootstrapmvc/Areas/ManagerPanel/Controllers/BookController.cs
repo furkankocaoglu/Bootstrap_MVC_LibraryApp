@@ -111,5 +111,18 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             }
             return RedirectToAction("Index", "Book");
         }
+        public ActionResult ActivateAll()
+        {
+            var silinmisKitaplar = db.Books.Where(c => c.IsDeleted == true) .ToList();
+
+            foreach (var kitap in silinmisKitaplar)
+            {
+                kitap.IsActive = true;
+                kitap.IsDeleted = false; 
+            }
+            db.SaveChanges();
+            TempData["mesaj"] = "Tüm kitaplar başarıyla aktifleştirildi.";
+            return RedirectToAction("Index", "Book"); 
+        }
     }
 }

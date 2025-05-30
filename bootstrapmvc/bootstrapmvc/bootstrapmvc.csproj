@@ -2222,6 +2222,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\BookController.cs" />
+    <Compile Include="Areas\ManagerPanel\Controllers\DashboardController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\HomeController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
     <Compile Include="Areas\ManagerPanel\Data\ManagerLoginViewModel.cs" />
@@ -2248,6 +2249,7 @@
     <Content Include="Areas\ManagerPanel\Views\Book\Create.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Book\Edit.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Book\_Index.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Dashboard\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

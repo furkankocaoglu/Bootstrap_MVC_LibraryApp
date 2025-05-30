@@ -25,6 +25,11 @@
                     @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
                     @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                 </div>
+                <div class="mb-3">
+                    <label for="Writer" class="form-label"><strong>Yazar Adı</strong></label>
+                    @Html.EditorFor(x => x.Writer, new { htmlAttributes = new { @class = "form-control", @id = "Writer" } })
+                    @Html.ValidationMessageFor(x => x.Writer, "", new { @class = "text-danger" })
+                </div>
 
                 <button type="submit" class="btn btn-outline-success">Kitap Ekle</button>
             }

@@ -17,6 +17,11 @@ namespace bootstrapmvc.Models
         [StringLength(maximumLength: 75, ErrorMessage = "bu alan en fazla 75 karakter olmalıdır")]
         public string Name { get; set; }
 
+        [Display(Name = "Yazar")]
+        [Required(ErrorMessage = "Bu alan zorunludur")]
+        [StringLength(maximumLength: 75, ErrorMessage = "bu alan en fazla 75 karakter olmalıdır")]
+        public string Writer { get; set; }
+
         [Display(Name = "Durum")]
         public bool IsActive { get; set; } = true;
     }

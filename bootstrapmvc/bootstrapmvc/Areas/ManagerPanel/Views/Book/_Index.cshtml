@@ -3,10 +3,24 @@
     ViewBag.Title = "_Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
+
+@if (TempData["mesaj"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["mesaj"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
 <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Silinmiş Kitap Listesi</h4>
+            <h4 class="card-title float-start">Silinmiş Kitap Listesi</h4>
+            <a href="@Url.Action("ActivateAll", "Book", new { area = "ManagerPanel" })"
+               class="btn btn-outline-success float-end"
+               onclick="return confirm('Tüm kitapları aktif hale getirmek istediğinize emin misiniz?');">
+                <i class="fa fa-check-double"></i> Tüm kitapları aktif et
+            </a>
         </div>
         <div class="card-footer">
             <span>@Model.Count kitap listeleniyor</span>
@@ -17,6 +31,7 @@
                     <tr>
                         <th>ID</th>
                         <th>İsim</th>
+                        <th>Yazar Adı</th>
                         <th>Aktif Mi?</th>
                         <th>Aktif Et</th>
                     </tr>
@@ -25,9 +40,27 @@
                     @foreach (var book in Model)
                     {
                         <tr>
-                            <td>@book.ID</td>
+                            <td>
+                                <span class="badge bg-secondary">
+                                    <i class="fa-solid fa-id-badge"></i> @book.ID
+                                </span>
+                            </td>
                             <td>@book.Name</td>
-                            <td>@(book.IsActive ? "Evet" : "Hayır")</td>
+                            <td>@book.Writer</td>
+                            <td>
+                                @if (book.IsActive)
+                                {
+                                    <span class="badge bg-success">
+                                        <i class="fa-solid fa-check-circle"></i> Evet
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        <i class="fa-solid fa-xmark-circle"></i> Hayır
+                                    </span>
+                                }
+                            </td>
                             <td>
                                 <div class="btn-group btn-group-sm">
                                     <a href="@Url.Action("Back", "Book", new { id = book.ID, area = "ManagerPanel" })"
