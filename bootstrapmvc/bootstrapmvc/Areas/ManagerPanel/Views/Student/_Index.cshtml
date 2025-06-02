@@ -1,0 +1,82 @@
+﻿@model List<bootstrapmvc.Models.Student>
+@{
+    ViewBag.Title = "_Index";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (TempData["mesaj"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["mesaj"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title float-start">Silinmiş Öğrenci Listesi</h4>
+            <a href="@Url.Action("ActivateAll", "Student", new { area = "ManagerPanel" })"
+               class="btn btn-outline-success float-end"
+               onclick="return confirm('Silinen tüm öğrencileri aktif hale getirmek istediğinize emin misiniz?');">
+                <i class="fa fa-check-double"></i> Tüm öğrencileri aktif et
+            </a>
+        </div>
+        <div class="card-footer">
+            <span>@Model.Count öğrenci listeleniyor</span>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>İsim</th>
+                        <th>Soyisim</th>
+                        <th>Öğrenci No</th>
+                        <th>Aktif Mi?</th>
+                        <th>Aktif Et</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>
+                                <span class="badge bg-secondary">
+                                    <i class="fa-solid fa-id-badge"></i> @student.ID
+                                </span>
+                            </td>
+                            <td>@student.Name</td>
+                            <td>@student.Surname</td>
+                            <td>@student.StudentNumber</td>
+                            <td>
+                                @if (student.IsActive)
+                                {
+                                    <span class="badge bg-success">
+                                        <i class="fa-solid fa-check-circle"></i> Evet
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">
+                                        <i class="fa-solid fa-xmark-circle"></i> Hayır
+                                    </span>
+                                }
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="@Url.Action("Back", "Student", new { id = student.ID, area = "ManagerPanel" })"
+                                       class="btn btn-success"
+                                       title="Aktifleştir"
+                                       onclick="return confirm('Aktif etmek istediğinize emin misiniz?');">
+                                        <i class="fa-solid fa-rotate-left text-white"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

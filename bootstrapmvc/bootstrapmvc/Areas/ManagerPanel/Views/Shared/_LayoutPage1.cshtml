@@ -26,22 +26,44 @@
             <i class="fa-solid fa-right-from-bracket"></i> Çıkış
         </a>
     </div>
-    <div class="mt-2">
-        <nav class="nav flex-column">
-            <a class="nav-link p-1" href="@Url.Action("Index", "Home")">
-                <i class="fa-solid fa-house"></i> Anasayfa
-            </a>
-        </nav>
-        <nav class="nav flex-column">
-            <a class="nav-link p-1" href="@Url.Action("Index", "Dashboard")">
-                <i class="fa-solid fa-chart-line"></i> Dashboard
-            </a>
-        </nav>
-        <nav class="nav flex-column">
-            <a class="nav-link p-1" href="@Url.Action("Index", "Book")">
-                <i class="fa-solid fa-book"></i> Kitap Listesi
-            </a>
-        </nav>
+    <div class="container mt-3">
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Home")" class="nav-link">
+                    <i class="fa-solid fa-house"></i> Anasayfa
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Dashboard")" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> Kitap Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("_Index", "Dashboard")" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i> Öğrenci Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Book")" class="nav-link">
+                    <i class="fa-solid fa-book"></i> Kitap Listesi
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Student")" class="nav-link">
+                    <i class="fa-solid fa-user-graduate"></i> Öğrenciler
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Student")" class="nav-link">
+                    <i class="fa-solid fa-book-reader"></i> Ödünç İşlemleri
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "BlackList")" class="nav-link">
+                    <i class="fa-solid fa-ban"></i> Kara Liste
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="container mt-4">
         @RenderBody()

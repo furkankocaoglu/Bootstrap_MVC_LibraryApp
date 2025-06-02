@@ -1,0 +1,76 @@
+﻿@model bootstrapmvc.Models.Student
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title mb-0">
+                <span class="badge bg-success">Öğrenci Düzenleme Sayfası</span>
+            </h4>
+        </div>
+
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                if (ViewBag.mesaj != null)
+                {
+                    <div class="alert alert-info">@ViewBag.mesaj</div>
+                }
+
+                <div class="mb-3">
+                    <label for="Name" class="form-label"><strong>İsim</strong></label>
+                    @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Surname" class="form-label"><strong>Soyisim</strong></label>
+                    @Html.EditorFor(x => x.Surname, new { htmlAttributes = new { @class = "form-control", @id = "Surname" } })
+                    @Html.ValidationMessageFor(x => x.Surname, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="StudentNumber" class="form-label"><strong>Öğrenci Numarası</strong></label>
+                    @Html.EditorFor(x => x.StudentNumber, new { htmlAttributes = new { @class = "form-control", @id = "StudentNumber" } })
+                    @Html.ValidationMessageFor(x => x.StudentNumber, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Department" class="form-label"><strong>Bölüm</strong></label>
+                    @Html.EditorFor(x => x.Department, new { htmlAttributes = new { @class = "form-control", @id = "Department" } })
+                    @Html.ValidationMessageFor(x => x.Department, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Class" class="form-label"><strong>Sınıf</strong></label>
+                    @Html.EditorFor(x => x.Class, new { htmlAttributes = new { @class = "form-control", @id = "Class" } })
+                    @Html.ValidationMessageFor(x => x.Class, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="PhoneNumber" class="form-label"><strong>Telefon Numarası</strong></label>
+                    @Html.EditorFor(x => x.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @id = "PhoneNumber" } })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Address" class="form-label"><strong>Adres</strong></label>
+                    @Html.EditorFor(x => x.Address, new { htmlAttributes = new { @class = "form-control", @id = "Address" } })
+                    @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label for="Mail" class="form-label"><strong>E-Posta</strong></label>
+                    @Html.EditorFor(x => x.Mail, new { htmlAttributes = new { @class = "form-control", @id = "Mail" } })
+                    @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">Öğrenci Düzenle</button>
+            }
+        </div>
+    </div>
+</div>
+

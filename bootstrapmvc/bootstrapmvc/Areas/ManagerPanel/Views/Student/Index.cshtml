@@ -1,0 +1,99 @@
+﻿@model List<bootstrapmvc.Models.Student>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@{
+    var db = new bootstrapmvc.Models.Model1();
+    var deletedCount = db.Students.Count(x => x.IsDeleted);
+}
+
+@if (TempData["mesaj"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["mesaj"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <a href="@Url.Action("_Index", "Student")" class="btn btn-outline-danger float-start">
+                Silinen Öğrenciler <span class="badge bg-danger">@deletedCount</span>
+            </a>
+            <a href="@Url.Action("Create", "Student")" class="btn btn-outline-success float-end">
+                <i class="fa fa-plus"></i> Yeni Öğrenci Ekle
+            </a>
+        </div>
+        <div class="card-footer">
+            <span>@Model.Count öğrenci listeleniyor</span>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>İsim</th>
+                            <th>Soyisim</th>
+                            <th>Öğrenci No</th>
+                            <th>Bölüm</th>
+                            <th>Sınıf</th>
+                            <th>Kayıt Tarihi</th> 
+                            <th>Aktif Mi?</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge bg-secondary">
+                                        <i class="fa-solid fa-id-badge"></i> @student.ID
+                                    </span>
+                                </td>
+                                <td>@student.Name</td>
+                                <td>@student.Surname</td>
+                                <td>@student.StudentNumber</td>
+                                <td>@student.Department</td>
+                                <td>@student.Class</td>
+                                <td>@student.RegistrationDate.ToString("dd.MM.yyyy")</td> 
+                                <td>
+                                    @if (student.IsActive)
+                                    {
+                                        <span class="badge bg-success">
+                                            <i class="fa-solid fa-check-circle"></i> Evet
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">
+                                            <i class="fa-solid fa-xmark-circle"></i> Hayır
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="@Url.Action("Details", "Student", new { id = student.ID })" class="btn btn-primary" title="Bilgi">
+                                            <i class="fa-solid fa-info-circle text-white"></i>
+                                        </a>
+                                        <a href="@Url.Action("Edit", "Student", new { id = student.ID })" class="btn btn-warning" title="Düzenle">
+                                            <i class="fa fa-pencil-alt text-dark"></i>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "Student", new { id = student.ID })" class="btn btn-secondary" title="Sil" onclick="return confirm('Silmek istediğinize emin misiniz?');">
+                                            <i class="fa fa-trash text-danger"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

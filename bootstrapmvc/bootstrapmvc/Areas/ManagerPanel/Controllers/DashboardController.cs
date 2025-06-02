@@ -27,5 +27,23 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             var model = db.Books.ToList();
             return View(model);
         }
+        public ActionResult _Index()
+        {
+            var toplamOgrenci = db.Students.Count();
+            var aktifOgrenci = db.Students.Count(x => x.IsDeleted == false);
+            var silinmisOgrenci = db.Students.Count(x => x.IsDeleted == true);
+            var bolumSayisi = db.Students.Select(x => x.Department).Distinct().Count();
+
+            ViewBag.ToplamOgrenci = toplamOgrenci;
+            ViewBag.AktifOgrenci = aktifOgrenci;
+            ViewBag.SilinmisOgrenci = silinmisOgrenci;
+            ViewBag.BolumSayisi = bolumSayisi;
+
+            
+            var ogrenciler = db.Students.ToList();
+
+            return View(ogrenciler);
+
+        }
     }
 }

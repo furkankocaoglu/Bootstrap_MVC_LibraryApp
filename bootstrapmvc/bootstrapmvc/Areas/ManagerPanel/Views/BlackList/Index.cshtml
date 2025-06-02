@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mesajimvar">Kara Liste Nedir?</button>
+    <div class="modal fade" id="mesajimvar">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Bilgilendirme</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="height: 100px;">
+                        <p>Bu bölümde, kitap iade süresini aşan veya kütüphane kurallarını ihlal eden öğrenciler yer almaktadır. Kara listedeki öğrencilerin ödünç alma işlemleri kısıtlanmıştır. Lütfen gerekli kontrolleri yapınız.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Anladım</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

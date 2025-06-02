@@ -1,0 +1,82 @@
+﻿@model bootstrapmvc.Models.Student
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+
+    int toplam = 5;
+    int dolu = 0;
+
+    if (!string.IsNullOrEmpty(Model.Surname)) { dolu++; }
+    if (!string.IsNullOrEmpty(Model.Department)) { dolu++; }
+    if (!string.IsNullOrEmpty(Model.Class)) { dolu++; }
+    if (!string.IsNullOrEmpty(Model.PhoneNumber)) { dolu++; }
+    if (!string.IsNullOrEmpty(Model.Address)) { dolu++; }
+
+    int doluluk = (int)((dolu / (double)toplam) * 100);
+
+}
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title float-start"> Öğrenci Bilgileri </h4>
+            <a href="@Url.Action("Index", "Student")" class="btn btn-secondary float-end">
+                Geri Dön
+            </a>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>ID</th>
+                    <td>@Model.ID</td>
+                </tr>
+                <tr>
+                    <th>İsim</th>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <th>Soyisim</th>
+                    <td>@Model.Surname</td>
+                </tr>
+                <tr>
+                    <th>Öğrenci Numarası</th>
+                    <td>@Model.StudentNumber</td>
+                </tr>
+                <tr>
+                    <th>Bölüm</th>
+                    <td>@Model.Department</td>
+                </tr>
+                <tr>
+                    <th>Sınıf</th>
+                    <td>@Model.Class</td>
+                </tr>
+                <tr>
+                    <th>Telefon Numarası</th>
+                    <td>@Model.PhoneNumber</td>
+                </tr>
+                <tr>
+                    <th>Adres</th>
+                    <td>@Model.Address</td>
+                </tr>
+                <tr>
+                    <th>Kayıt Tarihi</th>
+                    <td>@Model.RegistrationDate.ToString("dd.MM.yyyy")</td>
+                </tr>
+                <tr>
+                    <th>E-Posta</th>
+                    <td>@Model.Mail</td>
+                </tr>
+                <tr>
+                    <th>Aktif Mi?</th>
+                    <td>@(Model.IsActive ? "Evet" : "Hayır")</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer">
+            <h4 >Profil Doluluk Oranı</h4>
+            <div class="progress">
+                <div class="progress-bar bg-success" style="width: @doluluk%;">@doluluk%</div>
+            </div>
+        </div>
+    </div>
+</div>
