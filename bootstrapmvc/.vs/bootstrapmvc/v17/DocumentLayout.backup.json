@@ -3,64 +3,8 @@
   "WorkspaceRootPath": "C:\\Projeler\\bootstrapmvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\blacklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\blacklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\blacklist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\blacklist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,201 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T04:29:27.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Edit.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Edit.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Edit.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T04:18:22.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Details.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Details.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Details.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T04:17:51.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAqwHsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T04:16:12.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "ViewState": "AgIAADcAAAAAAAAAAAAkwFAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:40:59.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Models\\Student.cs",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Models\\Student.cs",
-              "RelativeToolTip": "bootstrapmvc\\Models\\Student.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T03:38:04.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_LayoutPage1.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:27:52.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADAAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:40:58.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:33:58.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BlackListController.cs",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T04:00:22.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T04:04:04.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:32:03.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA6wB0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T03:28:17.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:31:50.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T03:28:13.462Z",
+              "WhenOpened": "2025-06-03T01:41:12.977Z",
               "EditorCaption": ""
             }
           ]

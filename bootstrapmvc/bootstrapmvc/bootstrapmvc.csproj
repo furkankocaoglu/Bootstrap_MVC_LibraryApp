@@ -2223,6 +2223,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\BlackListController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\BookController.cs" />
+    <Compile Include="Areas\ManagerPanel\Controllers\BorrowController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\DashboardController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\HomeController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
@@ -2235,6 +2236,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Borrow.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManagerRole.cs" />
@@ -2260,6 +2262,10 @@
     <Content Include="Areas\ManagerPanel\Views\Dashboard\_Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\BlackList\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Student\Details.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Borrow\Create.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Borrow\Index.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Borrow\_Index.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Dashboard\BorrowStats.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

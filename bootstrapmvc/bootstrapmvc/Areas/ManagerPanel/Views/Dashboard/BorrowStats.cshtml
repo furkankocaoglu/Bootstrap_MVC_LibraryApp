@@ -1,38 +1,37 @@
-﻿@model List<bootstrapmvc.Models.Book>
-
+﻿@model List<bootstrapmvc.Models.Borrow>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BorrowStats";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-
 <div class="container mt-3">
     <div class="row">
         <div class="col-xl-3 col-lg-4 col-sm-6 mt-2">
             <div class="p-3 bg-secondary text-white rounded text-center">
-                <span class="badge bg-info fs-4">@ViewBag.ToplamKitap</span>
-                <div>Toplam Kitap</div>
+                <span class="badge bg-info fs-4">@ViewBag.ToplamOdunc</span>
+                <div>Toplam Ödünç</div>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-4 col-sm-6 mt-2">
             <div class="p-3 bg-secondary text-white rounded text-center">
-                <span class="badge bg-success fs-4">@ViewBag.AktifKitap</span>
-                <div>Aktif Kitap</div>
+                <span class="badge bg-success fs-4">@ViewBag.TeslimEdilen</span>
+                <div>Teslim Edilen</div>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-4 col-sm-6 mt-2">
             <div class="p-3 bg-secondary text-white rounded text-center">
-                <span class="badge bg-danger fs-4">@ViewBag.SilinmisKitap</span>
-                <div>Silinmiş Kitap</div>
+                <span class="badge bg-warning text-dark fs-4">@ViewBag.TeslimEdilmeyen</span>
+                <div>Teslim Edilmeyen</div>
             </div>
         </div>
 
         <div class="col-xl-3 col-lg-4 col-sm-6 mt-2">
             <div class="p-3 bg-secondary text-white rounded text-center">
-                <span class="badge bg-warning text-dark fs-4">@ViewBag.YazarSayisi</span>
-                <div>Yazar</div>
+                <span class="badge bg-danger fs-4">@ViewBag.Geciken</span>
+                <div>Geciken</div>
             </div>
         </div>
     </div>
 </div>
+

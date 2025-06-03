@@ -12,7 +12,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     public class DashboardController : Controller
     {
         Model1 db = new Model1();
-        public ActionResult Index()
+        public ActionResult Index()//kitap istatistik
         {
             var toplam = db.Books.Count();
             var aktif = db.Books.Count(x => x.IsDeleted == false);
@@ -27,7 +27,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             var model = db.Books.ToList();
             return View(model);
         }
-        public ActionResult _Index()
+        public ActionResult _Index()//öğrenci istatistik
         {
             var toplamOgrenci = db.Students.Count();
             var aktifOgrenci = db.Students.Count(x => x.IsDeleted == false);
@@ -44,6 +44,24 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             return View(ogrenciler);
 
+        }
+        public ActionResult BorrowStats()//ödünç istatistik
+        {
+            var toplamOdunc = db.Borrows.Count();
+            var teslimEdilen = db.Borrows.Count(x => x.IsReturned == true);
+            var teslimEdilmeyen = db.Borrows.Count(x => x.IsReturned == false);
+
+            
+            var gecikenler = db.Borrows.Count(x => x.IsReturned == false && x.DueDate < DateTime.Now);
+
+            ViewBag.ToplamOdunc = toplamOdunc;
+            ViewBag.TeslimEdilen = teslimEdilen;
+            ViewBag.TeslimEdilmeyen = teslimEdilmeyen;
+            ViewBag.Geciken = gecikenler;
+
+            var model = db.Borrows.Include("Student").Include("Book").ToList();
+
+            return View(model);
         }
     }
 }

@@ -1,0 +1,52 @@
+﻿@model bootstrapmvc.Models.Borrow
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@if (ViewBag.mesaj != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @ViewBag.mesaj
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <h4><i class="fa-solid fa-book"></i> Kitap Ödünç Verme Sayfası</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.StudentID, "Öğrenci Numarası", htmlAttributes: new { @class = "form-label" })
+                    @Html.DropDownList("StudentID", ViewBag.StudentID as SelectList, new { @class = "form-select" })
+                    @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.BookID, "Alacağı Kitap", htmlAttributes: new { @class = "form-label" })
+                    @Html.DropDownList("BookID", ViewBag.BookID as SelectList, new { @class = "form-select" })
+                    @Html.ValidationMessageFor(model => model.BookID, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.DueDate, "Getirmesi Gereken Tarih", htmlAttributes: new { @class = "form-label" })
+                    @Html.TextBoxFor(model => model.DueDate, new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-success" onclick="return confirm('Kitabı ödünç vermek istediğinize emin misiniz?');">
+                    <i class="fa fa-check"></i> Ödünç Ver
+                </button>
+                <a href="@Url.Action("Index", "Borrow")" class="btn btn-secondary">
+                    <i class="fa fa-arrow-left"></i> Geri Dön
+                </a>
+            }
+        </div>
+    </div>
+</div>
