@@ -39,7 +39,7 @@
     <div class="card">
         <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
             <h4 class="mb-0">
-                <i class="fa-solid fa-skull-crossbones me-2"></i> Kara Listedeki Öğrenciler
+                <i class="fa-solid fa-skull me-2"></i><i class="fa-solid fa-skull me-2"></i> <strong>Kara Listedeki Öğrenciler</strong>
             </h4>
             <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
                class="btn btn-danger btn-sm"
@@ -47,14 +47,13 @@
                 <i class="fa-solid fa-crown"></i> <strong>Herkese Af Çıkar</strong> 
             </a>
         </div>
-
         <div class="card-body table-responsive">
             <table class="table table-hover table-striped table-bordered align-middle">
                 <thead class="table-danger">
                     <tr>
                         <th><i class="fa-solid fa-user me-2"></i> Öğrenci Ad Soyad</th>
                         <th>Öğrenci No</th>
-                        <th>Para Cezası (TL)</th>
+                        <th>Ceza Tutarı (₺)</th>
                         <th>Gecikme Gün Sayısı</th>
                         <th>Getirmesi Gereken Tarih</th>
                         <th>İşlem</th>
@@ -79,8 +78,8 @@
                             <td>
                                 <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
                                    class="btn btn-danger btn-sm"
-                                   onclick="return confirm('Öğrencinin cezasını affetmek istediğinizden emin misiniz?');">
-                                    <i class="fa-solid fa-hands-praying"></i><strong>Affet</strong>
+                                   onclick="return confirm('Öğrenci ceza tutarını ödedi ve tekrarı olmayacağını belirtiyor ise işleme devam ediniz.');">
+                                    <i class="fa-solid fa-hands-praying"></i><strong>&nbsp;Affet</strong>
                                 </a>
                             </td>
                         </tr>

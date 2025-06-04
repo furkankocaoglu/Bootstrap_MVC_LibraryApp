@@ -29,7 +29,7 @@
             <table class="table table-bordered table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th><i class="fa-solid fa-user me-1"></i> Öğrenci Ad Soyad</th>
+                        <th><i class="fa-solid fa-user me-1"></i> Öğrenci Ad-Soyad</th>
                         <th>Öğrenci No</th>
                         <th>Bölüm</th>
                         <th>Ceza Tutarı (₺)</th>
@@ -40,7 +40,9 @@
                     {
                         <tr>
                             <td>
-                                <i class="fa-solid fa-crown text-warning me-1"></i>
+                                <a href="@Url.Action("Details", "Student", new { id = item.Student.ID })" class="btn btn-sm btn-primary" title="Öğrenci Hakkında Bilgi">
+                                    <i class="fa-solid fa-info-circle text-white"></i>
+                                </a>
                                 @item.Student.Name @item.Student.Surname
                             </td>
                             <td>@item.Student.StudentNumber</td>

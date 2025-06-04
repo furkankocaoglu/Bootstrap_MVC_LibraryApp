@@ -2,6 +2,7 @@
 using bootstrapmvc.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -57,9 +58,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             {
                 try
                 {
-                    decimal toplamCeza = db.Borrows
-                        .Where(b => b.StudentID == model.StudentID)
-                        .Sum(b => (decimal?)b.Penalty) ?? 0;
+                    decimal toplamCeza = db.Borrows.Where(b => b.StudentID == model.StudentID).Sum(b => (decimal?)b.Penalty) ?? 0;
 
                     if (toplamCeza > 50)
                     {
@@ -67,13 +66,16 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                         return RedirectToAction("Index", "Borrow");
                     }
 
+                    DateTime today = DateTime.Today; 
+
                     bool gecikmisOduncVar = db.Borrows.Any
-                    (b => b.StudentID == model.StudentID && !b.IsReturned && b.DueDate < DateTime.Now
+                    (
+                        b => b.StudentID == model.StudentID && !b.IsReturned&& DbFunctions.TruncateTime(b.DueDate) < today
                     );
 
                     if (gecikmisOduncVar)
                     {
-                        TempData["mesaj"] = "Teslim süresi geçmiş kitabınız bulunmaktadır. Önce onu iade etmeniz ve kara listeden çıkarılmanız gerekmektedir.";
+                        TempData["mesaj"] = "Teslim süresi geçmiş kitabınız bulunmaktadır. Önce kitabı iade etmeniz gerekmektedir.";
                         return RedirectToAction("Index", "Borrow");
                     }
 
@@ -94,10 +96,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             var oduncteOlanKitapIDs = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
             ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber", model.StudentID);
-            ViewBag.BookID = new SelectList(
-                db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)),
-                "ID", "Name", model.BookID
-            );
+            ViewBag.BookID = new SelectList(db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)),"ID", "Name", model.BookID);
 
             return View(model);
         }
@@ -129,7 +128,6 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                     db.SaveChanges();
                 }
             }
-
             return RedirectToAction("Index", "Borrow");
         }
 
