@@ -44,13 +44,16 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
+                        var dueEndOfDay = item.DueDate.Date.AddDays(1).AddSeconds(-1);
+                        bool isLate = DateTime.Now > dueEndOfDay;
+
                         <tr>
                             <td>@item.Student.StudentNumber</td>
                             <td>@item.Book.Name</td>
                             <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                             <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                             <td>
-                                @if (item.DueDate < DateTime.Now)
+                                @if (isLate)
                                 {
                                     <span class="badge bg-danger">
                                         <i class="fa fa-exclamation-circle"></i> Gecikmiş!

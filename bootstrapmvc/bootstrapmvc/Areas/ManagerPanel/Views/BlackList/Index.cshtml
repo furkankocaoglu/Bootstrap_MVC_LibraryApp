@@ -23,7 +23,7 @@
                 </div>
                 <div class="modal-body">
                     <div style="height: 100px;">
-                        <p>Bu bölümde, kitap iade süresini aşan veya kütüphane kurallarını ihlal eden öğrenciler yer almaktadır. Kara listedeki öğrencilerin ödünç alma işlemleri kısıtlanmıştır. Lütfen gerekli kontrolleri yapınız.</p>
+                        <p>Bu bölümde, kitap iade süresini aşan öğrenciler ve bu sürelerden doğan para cezaları yer almaktadır. Kara listedeki öğrencilerin ödünç alma işlemleri kısıtlanmıştır. Lütfen gerekli kontrolleri yapınız.</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -35,41 +35,58 @@
 </div>
 <br />
 
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th scope="col">
-                <i class="fa-solid fa-skull me-1"></i> Öğrenci Ad-Soyad
-            </th>
-            <th>Öğrenci No</th>
-            <th>Ceza (TL)</th>
-            <th>Gecikme Gün Sayısı</th>
-            <th>Söz Verdiği Tarih</th>
-            <th>İşlem</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <i class="fa-solid fa-skull me-1 text-danger"></i>
-                    @item.Student.Name @item.Student.Surname
-                </td>
-                <td>@item.Student.StudentNumber</td>
-                <td>@item.Penalty</td>
-                <td>
-                    @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0)
-                </td>
-                <td>@item.DueDate.ToShortDateString()</td>
-                <td>
-                    <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
-                       class="btn btn-warning btn-sm"
-                       onclick="return confirm('Emin misin? Öğrenci ceza tutarını ödediyse ve tekrarı olmayacağını belirtiyor ise bu işleme devam ediniz.');">
-                        Affet
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mt-0">
+    <div class="card">
+        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+                <i class="fa-solid fa-skull-crossbones me-2"></i> Kara Listedeki Öğrenciler
+            </h4>
+            <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
+               class="btn btn-danger btn-sm"
+               onclick="return confirm('Tüm öğrencilerin cezalarını sıfırlamak istediğinizden emin misiniz?');">
+                <i class="fa-solid fa-crown"></i> <strong>Herkese Af Çıkar</strong> 
+            </a>
+        </div>
+
+        <div class="card-body table-responsive">
+            <table class="table table-hover table-striped table-bordered align-middle">
+                <thead class="table-danger">
+                    <tr>
+                        <th><i class="fa-solid fa-user me-2"></i> Öğrenci Ad Soyad</th>
+                        <th>Öğrenci No</th>
+                        <th>Para Cezası (TL)</th>
+                        <th>Gecikme Gün Sayısı</th>
+                        <th>Getirmesi Gereken Tarih</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <i class="fa-solid fa-crown text-warning me-1"></i>
+                                @item.Student.Name @item.Student.Surname
+                            </td>
+                            <td>@item.Student.StudentNumber</td>
+                            <td>
+                                <span class="badge bg-danger">@item.Penalty TL</span>
+                            </td>
+                            <td>
+                                @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0) gün
+                            </td>
+                            <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                            <td>
+                                <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Öğrencinin cezasını affetmek istediğinizden emin misiniz?');">
+                                    <i class="fa-solid fa-hands-praying"></i><strong>Affet</strong>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

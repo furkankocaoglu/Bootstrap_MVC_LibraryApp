@@ -2267,6 +2267,7 @@
     <Content Include="Areas\ManagerPanel\Views\Borrow\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\_Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Dashboard\BorrowStats.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Dashboard\BlackListStats.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

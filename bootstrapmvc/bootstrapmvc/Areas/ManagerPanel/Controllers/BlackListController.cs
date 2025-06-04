@@ -24,25 +24,33 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult ForgivePenalty(int studentId)
         {
-            var cezalar = db.Borrows.Where(b => b.StudentID == studentId && b.Penalty > 0).ToList();
+            var ceza = db.Borrows.Where(b => b.StudentID == studentId && b.Penalty > 0).OrderByDescending(b => b.ReturnDate).FirstOrDefault();
 
-            if (cezalar.Count == 0)
+            if (ceza == null)
             {
                 TempData["mesaj"] = "Bu öğrencinin affedilecek cezası bulunmamaktadır.";
-                return RedirectToAction("Index","BlackList");
+                return RedirectToAction("Index", "BlackList");
             }
 
-            foreach (var borrow in cezalar)
-            {
-                borrow.Penalty = 0;
-            }
-
+            ceza.Penalty = 0;
             db.SaveChanges();
-            TempData["mesaj"] = "Öğrencinin cezası başarıyla affedildi.Yeni ödünç girişi yapabilirsiniz.";
+
+            TempData["mesaj"] = "Öğrencinin cezası affedildi.";
             return RedirectToAction("Index", "BlackList");
         }
 
+        public ActionResult ForgiveAllPenalties()
+        {
+            var cezalar = db.Borrows.Where(b => b.Penalty > 0).ToList();
+            foreach (var c in cezalar)
+            {
+                c.Penalty = 0;
+            }
+            db.SaveChanges();
 
+            TempData["mesaj"] = "Tüm öğrencilerin cezaları başarıyla affedildi.";
+            return RedirectToAction("Index");
+        }
 
     }
 }

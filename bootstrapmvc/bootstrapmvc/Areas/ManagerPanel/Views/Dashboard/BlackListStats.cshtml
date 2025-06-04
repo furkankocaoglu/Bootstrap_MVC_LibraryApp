@@ -1,0 +1,55 @@
+﻿@model List<bootstrapmvc.Models.Borrow>
+@{
+    ViewBag.Title = "BlackListStats";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-sm-12 mt-2">
+            <div class="p-3 bg-dark text-white rounded text-center">
+                <span class="badge bg-danger fs-4">@ViewBag.KaraListeOgrenciSayisi</span>
+                <div>Kara Listedeki Öğrenci Sayısı</div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-sm-12 mt-2">
+            <div class="p-3 bg-dark text-white rounded text-center">
+                <span class="badge bg-warning text-dark fs-4">@ViewBag.ToplamCezaTutari ₺</span>
+                <div>Toplam Ceza Tutarı</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-danger text-white">
+            <i class="fa-solid fa-triangle-exclamation me-1"></i> Ceza Alan Öğrenciler
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th><i class="fa-solid fa-user me-1"></i> Öğrenci Ad Soyad</th>
+                        <th>Öğrenci No</th>
+                        <th>Bölüm</th>
+                        <th>Ceza Tutarı (₺)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <i class="fa-solid fa-crown text-warning me-1"></i>
+                                @item.Student.Name @item.Student.Surname
+                            </td>
+                            <td>@item.Student.StudentNumber</td>
+                            <td>@item.Student.Department</td>
+                            <td>@item.Penalty</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

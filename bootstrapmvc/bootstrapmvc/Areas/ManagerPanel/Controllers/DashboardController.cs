@@ -2,9 +2,11 @@
 using bootstrapmvc.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 {
@@ -45,14 +47,16 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             return View(ogrenciler);
 
         }
-        public ActionResult BorrowStats()//ödünç istatistik
+        public ActionResult BorrowStats()
         {
             var toplamOdunc = db.Borrows.Count();
-            var teslimEdilen = db.Borrows.Count(x => x.IsReturned == true);
-            var teslimEdilmeyen = db.Borrows.Count(x => x.IsReturned == false);
+            var teslimEdilen = db.Borrows.Count(x => x.IsReturned);
+            var teslimEdilmeyen = db.Borrows.Count(x => !x.IsReturned);
 
-            
-            var gecikenler = db.Borrows.Count(x => x.IsReturned == false && x.DueDate < DateTime.Now);
+            var today = DateTime.Now.Date;
+
+            var gecikenler = db.Borrows.Count(b =>!b.IsReturned && DbFunctions.TruncateTime(b.DueDate) < today
+            );
 
             ViewBag.ToplamOdunc = toplamOdunc;
             ViewBag.TeslimEdilen = teslimEdilen;
@@ -63,5 +67,17 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             return View(model);
         }
+        public ActionResult BlackListStats()
+        {
+            var karaListe = db.Borrows.Where(b => b.Penalty > 0).Include("Student").ToList();
+
+            ViewBag.KaraListeOgrenciSayisi = karaListe.Select(b => b.StudentID).Distinct().Count();
+
+            ViewBag.ToplamCezaTutari = karaListe.Sum(b => b.Penalty);
+
+            return View(karaListe);
+        }
     }
+
+    
 }

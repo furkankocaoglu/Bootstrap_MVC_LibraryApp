@@ -57,11 +57,23 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             {
                 try
                 {
-                    decimal toplamCeza = db.Borrows.Where(b => b.StudentID == model.StudentID).Sum(b => (decimal?)b.Penalty) ?? 0;
+                    decimal toplamCeza = db.Borrows
+                        .Where(b => b.StudentID == model.StudentID)
+                        .Sum(b => (decimal?)b.Penalty) ?? 0;
 
                     if (toplamCeza > 50)
                     {
-                        TempData["mesaj"] = "Toplam cezanız 50 TL'yi geçtiği için kitap alamazsınız.";
+                        TempData["mesaj"] = "Toplam cezanız 50 TL'yi geçtiği için kitap alamazsınız. Önce geçmiş cezayı ödeyiniz.";
+                        return RedirectToAction("Index", "Borrow");
+                    }
+
+                    bool gecikmisOduncVar = db.Borrows.Any
+                    (b => b.StudentID == model.StudentID && !b.IsReturned && b.DueDate < DateTime.Now
+                    );
+
+                    if (gecikmisOduncVar)
+                    {
+                        TempData["mesaj"] = "Teslim süresi geçmiş kitabınız bulunmaktadır. Önce onu iade etmeniz ve kara listeden çıkarılmanız gerekmektedir.";
                         return RedirectToAction("Index", "Borrow");
                     }
 
@@ -81,9 +93,11 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             }
 
             var oduncteOlanKitapIDs = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
-
             ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber", model.StudentID);
-            ViewBag.BookID = new SelectList(db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)), "ID", "Name", model.BookID);
+            ViewBag.BookID = new SelectList(
+                db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)),
+                "ID", "Name", model.BookID
+            );
 
             return View(model);
         }
@@ -97,9 +111,12 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                     borrow.IsReturned = true;
                     borrow.ReturnDate = DateTime.Now;
 
-                    if (borrow.ReturnDate > borrow.DueDate)
+                    // Teslim günü 23:59:59’a kadar toleranslı olacak şekilde kontrol ediyorum.
+                    DateTime dueEndOfDay = borrow.DueDate.Date.AddDays(1).AddSeconds(-1);
+
+                    if (borrow.ReturnDate > dueEndOfDay)
                     {
-                        int daysLate = (borrow.ReturnDate.Value - borrow.DueDate).Days;
+                        int daysLate = (borrow.ReturnDate.Value.Date - borrow.DueDate.Date).Days;
                         borrow.Penalty = daysLate * 25;
                         TempData["mesaj"] = $"Kitap iade alındı, {daysLate} gün gecikme nedeniyle ceza uygulandı.";
                     }
@@ -116,7 +133,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             return RedirectToAction("Index", "Borrow");
         }
 
-        
+
     }
 
 }
