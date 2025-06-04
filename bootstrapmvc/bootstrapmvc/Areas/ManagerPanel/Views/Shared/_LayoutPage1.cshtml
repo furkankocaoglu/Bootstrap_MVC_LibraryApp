@@ -29,15 +29,16 @@
     <div class="container mt-3">
         <ul class="nav">
             <li class="nav-item">
-                <a href="#" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#dashboard" aria-controls="dashboard">
-                    <i class="fa-solid fa-gauge-high"></i> Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="@Url.Action("Index", "Home")" class="nav-link">
                     <i class="fa-solid fa-house"></i> Anasayfa
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#dashboard" aria-controls="dashboard">
+                    <i class="fa-solid fa-gauge-high"></i> Dashboard
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a href="@Url.Action("Index", "Book")" class="nav-link">
                     <i class="fa-solid fa-book"></i> Kitap Listesi
@@ -55,13 +56,13 @@
             </li>
             <li class="nav-item">
                 <a href="@Url.Action("Index", "BlackList")" class="nav-link">
-                    <i class="fa-solid fa-ban"></i> Kara Liste
+                    <i class="fa-solid fa-skull"></i> Kara Liste
                 </a>
             </li>
         </ul>
         <div class="offcanvas offcanvas-start text-bg-dark" id="dashboard" data-bs-backdrop="false">
             <div class="offcanvas-header">
-                <h3 class="offcanvas-title">Dashboard</h3>
+                <h3 class="offcanvas-title">İstatistikler</h3>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
             </div>
             <div class="offcanvas-body">

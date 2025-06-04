@@ -73,10 +73,29 @@
             </table>
         </div>
         <div class="card-footer">
-            <h4 >Profil Doluluk Oranı</h4>
+            <h4>Profil Doluluk Oranı</h4>
             <div class="progress">
                 <div class="progress-bar bg-success" style="width: @doluluk%;">@doluluk%</div>
             </div>
         </div>
+        <div class="container mt-3">
+            <div id="akordiyon">
+                <div class="card">
+                    <div class="card-header">
+                        <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
+                            <i class="fas fa-triangle-exclamation me-2"></i>Hatırlatma!
+                        </a>
+                    </div>
+                    <div class="collapse" data-bs-parent="#akordiyon" id="collapse1">
+                        <div class="card-body">
+                            <div class="alert alert-danger" role="alert">
+                                Doluluk oranı %100 olmayan öğrencilerin bilgilerini öğrenci ile görüşerek sonrasında mutlaka doldurunuz.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
     </div>
 </div>

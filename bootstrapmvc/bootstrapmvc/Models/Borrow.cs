@@ -23,8 +23,10 @@ namespace bootstrapmvc.Models
 
         [Display(Name = "Teslim Edilmesi Gereken Tarih")]
         [Required(ErrorMessage = "Teslim tarihi seçilmelidir")]
-        public DateTime DueDate { get; set; } // Kitabın en geç iade edilmesi gereken tarih
+        public DateTime DueDate { get; set; } // Öğrenci tarafından şu tarihte getireceğim dediği kitabın en geç iade edilmesi gereken tarih
         public bool IsReturned { get; set; } = false; //Kitap iade edildi mi?
+
+        public decimal Penalty { get; set; } = 0;
 
     }
 }

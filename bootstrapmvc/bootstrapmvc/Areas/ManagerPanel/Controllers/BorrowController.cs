@@ -27,9 +27,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
         public ActionResult _Index()
         {
-            var borrows = db.Borrows
-                    .Where(b => b.IsReturned)
-                    .ToList();
+            var borrows = db.Borrows.Where(b => b.IsReturned).ToList();
 
             foreach (var borrow in borrows)
             {
@@ -59,15 +57,26 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             {
                 try
                 {
+                    decimal toplamCeza = db.Borrows.Where(b => b.StudentID == model.StudentID).Sum(b => (decimal?)b.Penalty) ?? 0;
+
+                    if (toplamCeza > 50)
+                    {
+                        TempData["mesaj"] = "Toplam cezanız 50 TL'yi geçtiği için kitap alamazsınız.";
+                        return RedirectToAction("Index", "Borrow");
+                    }
+
                     model.BorrowDate = DateTime.Now;
+                    model.IsReturned = false;
+                    model.Penalty = 0;
                     db.Borrows.Add(model);
                     db.SaveChanges();
-                    TempData["mesaj"] = "Kitap ödünç verildi";
+
+                    TempData["mesaj"] = "Kitap ödünç verildi. Geri getirme tarihine dikkat edilmelidir.";
                     return RedirectToAction("Index", "Borrow");
                 }
-                catch
+                catch (Exception ex)
                 {
-                    ViewBag.mesaj = "Bir hata oluştu";
+                    TempData["mesaj"] = "Bir hata oluştu: " + ex.Message;
                 }
             }
 
@@ -80,15 +89,34 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult Return(int? id)
         {
-            Borrow borrow = db.Borrows.Find(id);
+            if (id != null)
+            {
+                Borrow borrow = db.Borrows.Find(id);
+                if (borrow != null)
+                {
+                    borrow.IsReturned = true;
+                    borrow.ReturnDate = DateTime.Now;
 
-            borrow.IsReturned = true;
-            borrow.ReturnDate = DateTime.Now;
+                    if (borrow.ReturnDate > borrow.DueDate)
+                    {
+                        int daysLate = (borrow.ReturnDate.Value - borrow.DueDate).Days;
+                        borrow.Penalty = daysLate * 25;
+                        TempData["mesaj"] = $"Kitap iade alındı, {daysLate} gün gecikme nedeniyle ceza uygulandı.";
+                    }
+                    else
+                    {
+                        borrow.Penalty = 0;
+                        TempData["mesaj"] = "Kitap iade alındı.";
+                    }
 
-            db.SaveChanges();
-            TempData["mesaj"] = "Kitap iade alındı";
+                    db.SaveChanges();
+                }
+            }
+
             return RedirectToAction("Index", "Borrow");
         }
+
+        
     }
 
 }

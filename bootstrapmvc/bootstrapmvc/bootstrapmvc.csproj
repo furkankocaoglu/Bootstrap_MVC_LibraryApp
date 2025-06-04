@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\ManagerPanel\Gorseller\1487184215-yonetici-ekrani.jpg" />
+    <Content Include="Areas\ManagerPanel\Gorseller\istockphoto-949118068-612x612.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css" />

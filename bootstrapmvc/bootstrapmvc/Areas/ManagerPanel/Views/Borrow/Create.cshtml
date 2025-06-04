@@ -4,10 +4,10 @@
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
-@if (ViewBag.mesaj != null)
+@if (TempData["mesaj"] != null)
 {
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        @ViewBag.mesaj
+        @TempData["mesaj"]
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
     </div>
 }

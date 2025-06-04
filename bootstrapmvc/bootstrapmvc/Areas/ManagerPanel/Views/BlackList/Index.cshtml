@@ -1,11 +1,19 @@
-﻿
+﻿@model List<bootstrapmvc.Models.Borrow>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
+@if (TempData["mesaj"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        @TempData["mesaj"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+    </div>
+}
+
 <div class="container mt-3">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mesajimvar">Kara Liste Nedir?</button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mesajimvar">Beni Oku</button>
     <div class="modal fade" id="mesajimvar">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -25,4 +33,43 @@
         </div>
     </div>
 </div>
+<br />
 
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">
+                <i class="fa-solid fa-skull me-1"></i> Öğrenci Ad-Soyad
+            </th>
+            <th>Öğrenci No</th>
+            <th>Ceza (TL)</th>
+            <th>Gecikme Gün Sayısı</th>
+            <th>Söz Verdiği Tarih</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <i class="fa-solid fa-skull me-1 text-danger"></i>
+                    @item.Student.Name @item.Student.Surname
+                </td>
+                <td>@item.Student.StudentNumber</td>
+                <td>@item.Penalty</td>
+                <td>
+                    @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0)
+                </td>
+                <td>@item.DueDate.ToShortDateString()</td>
+                <td>
+                    <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
+                       class="btn btn-warning btn-sm"
+                       onclick="return confirm('Emin misin? Öğrenci ceza tutarını ödediyse ve tekrarı olmayacağını belirtiyor ise bu işleme devam ediniz.');">
+                        Affet
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
