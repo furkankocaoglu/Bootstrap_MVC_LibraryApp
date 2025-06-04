@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projeler\\bootstrapmvc\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\projeler\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Projeler\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-04T02:21:37.746Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
