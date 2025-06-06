@@ -19,7 +19,9 @@
 <div class="container mt-3">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title float-start"> Öğrenci Bilgileri </h4>
+            <h4 class="card-title float-start">
+                <i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Bilgileri
+            </h4>
             <a href="@Url.Action("Index", "Student")" class="btn btn-secondary float-end">
                Öğrenci Listesine Dön
             </a>
@@ -27,47 +29,47 @@
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <th>ID</th>
+                    <th><i class="fa-solid fa-id-badge me-2"></i> ID</th>
                     <td>@Model.ID</td>
                 </tr>
                 <tr>
-                    <th>İsim</th>
+                    <th><i class="fa-solid fa-user me-2"></i> İsim</th>
                     <td>@Model.Name</td>
                 </tr>
                 <tr>
-                    <th>Soyisim</th>
+                    <th><i class="fa-solid fa-user me-2"></i> Soyisim</th>
                     <td>@Model.Surname</td>
                 </tr>
                 <tr>
-                    <th>Öğrenci Numarası</th>
+                    <th><i class="fa-solid fa-hashtag me-2"></i> Öğrenci Numarası</th>
                     <td>@Model.StudentNumber</td>
                 </tr>
                 <tr>
-                    <th>Bölüm</th>
+                    <th><i class="fa-solid fa-building-columns me-2"></i> Bölüm</th>
                     <td>@Model.Department</td>
                 </tr>
                 <tr>
-                    <th>Sınıf</th>
+                    <th><i class="fa-solid fa-layer-group me-2"></i> Sınıf</th>
                     <td>@Model.Class</td>
                 </tr>
                 <tr>
-                    <th>Telefon Numarası</th>
+                    <th><i class="fa-solid fa-phone me-2"></i> Telefon Numarası</th>
                     <td>@Model.PhoneNumber</td>
                 </tr>
                 <tr>
-                    <th>Adres</th>
+                    <th><i class="fa-solid fa-location-dot me-2"></i> Adres</th>
                     <td>@Model.Address</td>
                 </tr>
                 <tr>
-                    <th>Kayıt Tarihi</th>
+                    <th><i class="fa-solid fa-calendar-days me-2"></i> Kayıt Tarihi</th>
                     <td>@Model.RegistrationDate.ToString("dd.MM.yyyy")</td>
                 </tr>
                 <tr>
-                    <th>E-Posta</th>
+                    <th><i class="fa-solid fa-envelope me-2"></i> E-Posta</th>
                     <td>@Model.Mail</td>
                 </tr>
                 <tr>
-                    <th>Aktif Mi?</th>
+                    <th><i class="fa-solid fa-check me-2"></i> Aktif Mi?</th>
                     <td>@(Model.IsActive ? "Evet" : "Hayır")</td>
                 </tr>
             </table>

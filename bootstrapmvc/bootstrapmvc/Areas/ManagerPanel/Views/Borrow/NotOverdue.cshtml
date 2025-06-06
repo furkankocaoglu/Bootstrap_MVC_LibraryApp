@@ -1,0 +1,66 @@
+﻿@model List<bootstrapmvc.Models.Borrow>
+@{
+    ViewBag.Title = "NotOverdue";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+                <i class="fa-solid fa-list"></i> Teslim Tarihi Geçmemiş Ödünç Kitaplar
+            </h4>
+            <div>
+                <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-light" title="Gecikmiş Kitaplar">
+                    <i class="fa fa-exclamation-circle"></i> Gecikmiş Kitaplar
+                </a>
+                <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-light" title="Tüm Ödünçler">
+                    <i class="fa fa-list"></i> Tüm Ödünçler
+                </a>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
+                        <th>Öğrenci No</th>
+                        <th>Kitap</th>
+                        <th>Ödünç Tarihi</th>
+                        <th>Son Teslim Tarihi</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Student.Name @item.Student.Surname</td>
+                            <td>@item.Student.StudentNumber</td>
+                            <td>@item.Book.Name</td>
+                            <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
+                            <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="fa fa-clock"></i> Süre Dolmadı
+                                </span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Return", "Borrow", new { id = item.ID })"
+                                   class="btn btn-success btn-sm"
+                                   onclick="return confirm('Öğrenci kitabı getirdiyse işlemi devam ettiriniz.');"
+                                   title="Kitabı İade Al">
+                                    <i class="fa fa-undo"></i> İade Al
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="#top" class="text-decoration-none">
+                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+            </a>
+        </div>
+    </div>
+</div>

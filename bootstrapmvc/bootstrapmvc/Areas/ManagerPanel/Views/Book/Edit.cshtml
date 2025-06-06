@@ -9,7 +9,9 @@
     <div class="card">
         <div class="card-header">
             <h4 class="card-title mb-0">
-                <span class="badge bg-success">Kitap Düzenleme Sayfası</span>
+                <span class="badge bg-success">
+                    <i class="fa-solid fa-book-pen"></i> Kitap Düzenleme Sayfası
+                </span>
             </h4>
         </div>
 
@@ -22,17 +24,24 @@
                 }
 
                 <div class="mb-3">
-                    <label for="Name" class="form-label"><strong> Kitap Düzenle </strong></label>
+                    <label for="Name" class="form-label">
+                        <i class="fa-solid fa-book"></i> <strong>Kitap Adı</strong>
+                    </label>
                     @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
                     @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                 </div>
+
                 <div class="mb-3">
-                    <label for="Writer" class="form-label"><strong>Yazar Adı</strong></label>
+                    <label for="Writer" class="form-label">
+                        <i class="fa-solid fa-feather-pointed"></i> <strong>Yazar Adı</strong>
+                    </label>
                     @Html.EditorFor(x => x.Writer, new { htmlAttributes = new { @class = "form-control", @id = "Writer" } })
                     @Html.ValidationMessageFor(x => x.Writer, "", new { @class = "text-danger" })
                 </div>
 
-                <button type="submit" class="btn btn-outline-success">Kitap Düzenle</button>
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="fa-solid fa-pen-to-square"></i> Kitap Düzenle
+                </button>
             }
         </div>
     </div>

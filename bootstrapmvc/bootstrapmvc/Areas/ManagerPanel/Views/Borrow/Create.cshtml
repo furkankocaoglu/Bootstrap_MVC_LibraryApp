@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+    var maxDate = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
+    var today = DateTime.Now.ToString("yyyy-MM-dd");
 }
 
 @if (TempData["mesaj"] != null)
@@ -11,7 +13,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
     </div>
 }
-
 <div class="container mt-5">
     <div class="card">
         <div class="card-header bg-dark text-white">
@@ -23,30 +24,61 @@
                 @Html.AntiForgeryToken()
 
                 <div class="mb-3">
-                    @Html.LabelFor(model => model.StudentID, "Öğrenci Numarası", htmlAttributes: new { @class = "form-label" })
-                    @Html.DropDownList("StudentID", ViewBag.StudentID as SelectList, new { @class = "form-select" })
+                    <label for="StudentID" class="form-label">
+                        <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Numarası
+                    </label>
+                    @Html.DropDownList("StudentID", ViewBag.StudentID as SelectList, new { @class = "form-select", @id = "StudentID" })
                     @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    @Html.LabelFor(model => model.BookID, "Alacağı Kitap", htmlAttributes: new { @class = "form-label" })
-                    @Html.DropDownList("BookID", ViewBag.BookID as SelectList, new { @class = "form-select" })
+                    <label for="BookID" class="form-label">
+                        <i class="fa-solid fa-book-open me-1"></i> Alacağı Kitap
+                    </label>
+                    @Html.DropDownList("BookID", ViewBag.BookID as SelectList, new { @class = "form-select", @id = "BookID" })
                     @Html.ValidationMessageFor(model => model.BookID, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    @Html.LabelFor(model => model.DueDate, "Getirmesi Gereken Tarih", htmlAttributes: new { @class = "form-label" })
-                    @Html.TextBoxFor(model => model.DueDate, new { @class = "form-control", type = "date" })
+                    <label for="DueDate" class="form-label">
+                        <i class="fa-solid fa-calendar-day me-1"></i> Getirme Tarihi
+                    </label>
+                    @Html.TextBoxFor(model => model.DueDate, new
+                    {
+                        @class = "form-control",
+                        type = "date",
+                        min = today,
+                        max = maxDate,
+                        @id = "DueDate"
+                    })
                     @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
                 </div>
 
-                <button type="submit" class="btn btn-success" onclick="return confirm('Kitabı ödünç vermek istediğinize emin misiniz?');">
-                    <i class="fa fa-check"></i> Ödünç Ver
+                <button type="submit" class="btn btn-success">
+                    <i class="fa-solid fa-check"></i> Ödünç Ver
                 </button>
                 <a href="@Url.Action("Index", "Borrow")" class="btn btn-secondary">
-                    <i class="fa fa-arrow-left"></i> Geri Dön
+                    <i class="fa-solid fa-arrow-left"></i> Geri Dön
                 </a>
             }
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+    <div id="akordiyon">
+        <div class="card">
+            <div class="card-header">
+                <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
+                    <i class="fas fa-triangle-exclamation me-2"></i>Hatırlatma!
+                </a>
+            </div>
+            <div class="collapse" data-bs-parent="#akordiyon" id="collapse1">
+                <div class="card-body">
+                    <div class="alert alert-danger" role="alert">
+                        Bir öğrenci 1 kitabı en fazla 14 gün süre ile ödünç alabilir.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -5,7 +5,7 @@
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="card">
         <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
             <h4 class="mb-0">
@@ -19,9 +19,8 @@
             <table class="table table-striped table-hover">
                 <thead class="table-success">
                     <tr>
-                        <th>
-                            <i class="fa-solid fa-user-graduate me-2"></i> Öğrenci No
-                        </th>
+                        <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
+                        <th>Öğrenci No</th>
                         <th>Kitap</th>
                         <th>Alınma Tarihi</th>
                         <th>Geri Getirme Tarihi</th>
@@ -33,6 +32,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>@item.Student.Name @item.Student.Surname</td>
                             <td>@item.Student.StudentNumber</td>
                             <td>@item.Book.Name</td>
                             <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
@@ -47,6 +47,10 @@
                     }
                 </tbody>
             </table>
+            <a href="#top" class="text-decoration-none">
+                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+            </a>
         </div>
     </div>
 </div>
+

@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-header">
             <h4 class="card-title mb-0">
-                <span class="badge bg-success">Öğrenci Ekleme Sayfası</span>
+                <span class="badge bg-success"> Yeni Öğrenci Ekleme Sayfası</span>
             </h4>
         </div>
 
@@ -22,54 +22,72 @@
                 }
 
                 <div class="mb-3">
-                    <label for="Name" class="form-label"><strong>İsim</strong></label>
+                    <label for="Name" class="form-label">
+                        <i class="fa-solid fa-user"></i> <strong>İsim</strong>
+                    </label>
                     @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
                     @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="Surname" class="form-label"><strong>Soyisim</strong></label>
+                    <label for="Surname" class="form-label">
+                        <i class="fa-solid fa-users"></i> <strong>Soyisim</strong>
+                    </label>
                     @Html.EditorFor(x => x.Surname, new { htmlAttributes = new { @class = "form-control", @id = "Surname" } })
                     @Html.ValidationMessageFor(x => x.Surname, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="StudentNumber" class="form-label"><strong>Öğrenci Numarası</strong></label>
+                    <label for="StudentNumber" class="form-label">
+                        <i class="fa-solid fa-id-card"></i> <strong>Öğrenci Numarası</strong>
+                    </label>
                     @Html.EditorFor(x => x.StudentNumber, new { htmlAttributes = new { @class = "form-control", @id = "StudentNumber" } })
                     @Html.ValidationMessageFor(x => x.StudentNumber, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="Department" class="form-label"><strong>Bölüm</strong></label>
+                    <label for="Department" class="form-label">
+                        <i class="fa-solid fa-building-columns"></i> <strong>Bölüm</strong>
+                    </label>
                     @Html.EditorFor(x => x.Department, new { htmlAttributes = new { @class = "form-control", @id = "Department" } })
                     @Html.ValidationMessageFor(x => x.Department, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="Class" class="form-label"><strong>Sınıf</strong></label>
+                    <label for="Class" class="form-label">
+                        <i class="fa-solid fa-chalkboard-user"></i> <strong>Sınıf</strong>
+                    </label>
                     @Html.EditorFor(x => x.Class, new { htmlAttributes = new { @class = "form-control", @id = "Class" } })
                     @Html.ValidationMessageFor(x => x.Class, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="PhoneNumber" class="form-label"><strong>Telefon Numarası</strong></label>
+                    <label for="PhoneNumber" class="form-label">
+                        <i class="fa-solid fa-phone"></i> <strong>Telefon Numarası</strong>
+                    </label>
                     @Html.EditorFor(x => x.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @id = "PhoneNumber" } })
                     @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="Address" class="form-label"><strong>Adres</strong></label>
+                    <label for="Address" class="form-label">
+                        <i class="fa-solid fa-map-location-dot"></i> <strong>Adres</strong>
+                    </label>
                     @Html.TextAreaFor(x => x.Address, new { @class = "form-control", @id = "Address", rows = 3 })
                     @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
-                    <label for="Mail" class="form-label"><strong>E-Posta</strong></label>
+                    <label for="Mail" class="form-label">
+                        <i class="fa-solid fa-envelope"></i> <strong>E-Posta</strong>
+                    </label>
                     @Html.EditorFor(x => x.Mail, new { htmlAttributes = new { @class = "form-control", @id = "Mail" } })
                     @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
                 </div>
 
-                <button type="submit" class="btn btn-outline-success">Öğrenci Ekle</button>
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="fa-solid fa-user-plus"></i> Öğrenci Ekle
+                </button>
             }
         </div>
     </div>

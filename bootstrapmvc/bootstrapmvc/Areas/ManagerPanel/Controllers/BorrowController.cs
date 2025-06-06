@@ -42,9 +42,9 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var oduncteOlanKitapIDs = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
+            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
 
-            var kitaplar = db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)).ToList();
+            var kitaplar = db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitap.Contains(b.ID)).ToList();
 
             ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber");
             ViewBag.BookID = new SelectList(kitaplar, "ID", "Name");
@@ -63,30 +63,32 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                     if (toplamCeza > 50)
                     {
                         TempData["mesaj"] = "Toplam cezanız 50 TL'yi geçtiği için kitap alamazsınız. Önce geçmiş cezayı ödeyiniz.";
-                        return RedirectToAction("Index", "Borrow");
+                        return RedirectToAction("Create","Borrow");
                     }
 
-                    DateTime today = DateTime.Today; 
+                    DateTime today = DateTime.Today;
 
-                    bool gecikmisOduncVar = db.Borrows.Any
-                    (
-                        b => b.StudentID == model.StudentID && !b.IsReturned&& DbFunctions.TruncateTime(b.DueDate) < today
+                    bool gecikmisOduncVar = db.Borrows.Any(
+                        b => b.StudentID == model.StudentID &&
+                             !b.IsReturned &&
+                             DbFunctions.TruncateTime(b.DueDate) < today
                     );
 
                     if (gecikmisOduncVar)
                     {
                         TempData["mesaj"] = "Teslim süresi geçmiş kitabınız bulunmaktadır. Önce kitabı iade etmeniz gerekmektedir.";
-                        return RedirectToAction("Index", "Borrow");
+                        return RedirectToAction("Create", "Borrow");
                     }
 
                     model.BorrowDate = DateTime.Now;
                     model.IsReturned = false;
                     model.Penalty = 0;
+
                     db.Borrows.Add(model);
                     db.SaveChanges();
 
-                    TempData["mesaj"] = "Kitap ödünç verildi. Geri getirme tarihine dikkat edilmelidir.";
-                    return RedirectToAction("Index", "Borrow");
+                    TempData["mesaj"] = "Kitap ödünç verildi.";
+                    return RedirectToAction("Index","Borrow");
                 }
                 catch (Exception ex)
                 {
@@ -94,9 +96,10 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
             }
 
-            var oduncteOlanKitapIDs = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
+            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned) .Select(b => b.BookID).ToList();
+
             ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber", model.StudentID);
-            ViewBag.BookID = new SelectList(db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitapIDs.Contains(b.ID)),"ID", "Name", model.BookID);
+            ViewBag.BookID = new SelectList(db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitap.Contains(b.ID)), "ID", "Name", model.BookID);
 
             return View(model);
         }
@@ -111,7 +114,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                     borrow.ReturnDate = DateTime.Now;
 
                     // Teslim günü 23:59:59’a kadar toleranslı olacak şekilde kontrol ediyorum.
-                    DateTime dueEndOfDay = borrow.DueDate.Date.AddDays(1).AddSeconds(-1);
+                    DateTime dueEndOfDay = borrow.DueDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
 
                     if (borrow.ReturnDate > dueEndOfDay)
                     {
@@ -129,6 +132,23 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
             }
             return RedirectToAction("Index", "Borrow");
+        }
+        public ActionResult Overdue()
+        {
+            DateTime today = DateTime.Today;
+
+            var gecmis = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned && DbFunctions.TruncateTime(b.DueDate) < today).ToList();
+
+            return View(gecmis);
+        }
+        public ActionResult NotOverdue()
+        {
+            DateTime today = DateTime.Today;
+
+            var gecmemis = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned && DbFunctions.TruncateTime(b.DueDate) >= today).ToList(); //DbFunctions.TruncateTime(b.DueDate) Bu, DueDate'in saat kısmını yok sayar. Sadece tarihi alır:
+
+
+            return View(gecmemis);
         }
 
 

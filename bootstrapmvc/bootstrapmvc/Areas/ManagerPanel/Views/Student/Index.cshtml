@@ -43,7 +43,7 @@
                             <th>Öğrenci No</th>
                             <th>Bölüm</th>
                             <th>Sınıf</th>
-                            <th>Kayıt Tarihi</th> 
+                            <th>Kayıt Tarihi</th>
                             <th>Aktif Mi?</th>
                             <th>İşlemler</th>
                         </tr>
@@ -62,7 +62,7 @@
                                 <td>@student.StudentNumber</td>
                                 <td>@student.Department</td>
                                 <td>@student.Class</td>
-                                <td>@student.RegistrationDate.ToString("dd.MM.yyyy")</td> 
+                                <td>@student.RegistrationDate.ToString("dd.MM.yyyy")</td>
                                 <td>
                                     @if (student.IsActive)
                                     {
@@ -94,6 +94,9 @@
                         }
                     </tbody>
                 </table>
+                <a href="#top" class="text-decoration-none">
+                    <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+                </a>
             </div>
         </div>
     </div>

@@ -39,12 +39,12 @@
     <div class="card">
         <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
             <h4 class="mb-0">
-                <i class="fa-solid fa-skull me-2"></i><i class="fa-solid fa-skull me-2"></i> <strong>Kara Listedeki Öğrenciler</strong>
+                <i class="fa-solid fa-skull me-2"></i><i class="fa-solid fa-skull me-2"></i> <strong>Tüm Ceza Tutarları</strong>
             </h4>
             <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
                class="btn btn-danger btn-sm"
                onclick="return confirm('Tüm öğrencilerin cezalarını sıfırlamak istediğinizden emin misiniz?');">
-                <i class="fa-solid fa-crown"></i> <strong>Herkese Af Çıkar</strong> 
+                <i class="fa-solid fa-crown"></i> <strong>Af Çıkar</strong>
             </a>
         </div>
         <div class="card-body table-responsive">
@@ -53,6 +53,7 @@
                     <tr>
                         <th><i class="fa-solid fa-user me-2"></i> Öğrenci Ad Soyad</th>
                         <th>Öğrenci No</th>
+                        <th>Getirmediği Kitap</th>
                         <th>Ceza Tutarı (₺)</th>
                         <th>Gecikme Gün Sayısı</th>
                         <th>Getirmesi Gereken Tarih</th>
@@ -64,10 +65,11 @@
                     {
                         <tr>
                             <td>
-                                <i class="fa-solid fa-crown text-warning me-1"></i>
+                                <i class="fa-solid fa-crown me-2 text-dark"></i>
                                 @item.Student.Name @item.Student.Surname
                             </td>
                             <td>@item.Student.StudentNumber</td>
+                            <td>@item.Book.Name</td>
                             <td>
                                 <span class="badge bg-danger">@item.Penalty TL</span>
                             </td>
@@ -86,6 +88,27 @@
                     }
                 </tbody>
             </table>
+            <a href="#top" class="text-decoration-none">
+                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+    <div id="akordiyon">
+        <div class="card">
+            <div class="card-header">
+                <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
+                    <i class="fas fa-triangle-exclamation me-2"></i>Hatırlatma!
+                </a>
+            </div>
+            <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
+                <div class="card-body">
+                    <div class="alert alert-danger" role="alert">
+                        Bir öğrencinin ceza geçmişi en fazla 2 gün olabilir. Ödünç kitap alabilmesi için ceza geçmişinde 2 gün üstünde cezası olmaması gerekmektedir. Yeni ödünç kaydı için bu cezalarında affedilmesi gerekmektedir.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

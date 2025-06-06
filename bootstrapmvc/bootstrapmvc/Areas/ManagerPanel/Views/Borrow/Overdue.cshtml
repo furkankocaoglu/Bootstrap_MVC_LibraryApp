@@ -1,32 +1,17 @@
 ﻿@model List<bootstrapmvc.Models.Borrow>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Overdue";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
-}
-
-@if (TempData["mesaj"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-        @TempData["mesaj"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
-    </div>
 }
 
 <div class="container mt-5">
     <div class="card">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
             <h4 class="mb-0">
-                <i class="fa-solid fa-list"></i> Ödünç Alınan Kitaplar
+                <i class="fa-solid fa-list"></i> Süresi Geçmiş Ödünç Alınan Kitaplar
             </h4>
             <div>
-                <a href="@Url.Action("NotOverdue", "Borrow")" class="btn btn-outline-light" title="Ödünç Aşaması Devam Eden Kitaplar">
-                    <i class="fa fa-clock"></i> Ödünç Aşaması Devam Edenler
-                </a>
-                <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-light" title="Tüm Gecikmede Olan Kitaplar">
-                    <i class="fa fa-exclamation-circle"></i> Gecikenler
-                </a>
-                <a href="@Url.Action("_Index", "Borrow")" class="btn btn-outline-light" title="Teslim Edilen Kitaplar">
-                    <i class="fa fa-check"></i> Teslim Edilenler
+                <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-light" title="Geri Dön"> Geri Dön
                 </a>
                 <a href="@Url.Action("Create", "Borrow")" class="btn btn-outline-light" title="Yeni Ödünç İşlemi">
                     <i class="fa fa-plus"></i> Yeni Ödünç İşlemi
@@ -38,39 +23,35 @@
                 <thead class="table-dark">
                     <tr>
                         <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
-                        <th> Öğrenci No</th>
+                        <th>Öğrenci No</th>
                         <th>Kitap</th>
-                        <th>Alınma Tarihi</th>
-                        <th>Geri Getirme Tarihi</th>
-                        <th>Geri Geldi Mi?</th>
+                        <th>Ödünç Tarihi</th>
+                        <th>Son Teslim Tarihi</th>
+                        <th>Gecikme Gün Sayısı</th>
                         <th>İşlem</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        var dueEndOfDay = item.DueDate.Date.AddDays(1).AddSeconds(-1);
-                        bool isLate = DateTime.Now > dueEndOfDay;
-
+                        var daysLate = (DateTime.Now.Date - item.DueDate.Date).Days;
                         <tr>
-                            <td>@item.Student.Name @item.Student.Surname</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Student", new { id = item.Student.ID })"
+                                   class="btn btn-sm btn-primary me-2"
+                                   title="Mail/Telefon Bilgileri">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                                @item.Student.Name @item.Student.Surname
+                            </td>
                             <td>@item.Student.StudentNumber</td>
                             <td>@item.Book.Name</td>
                             <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                             <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                             <td>
-                                @if (isLate)
-                                {
-                                    <span class="badge bg-danger">
-                                        <i class="fa fa-exclamation-circle"></i> Gecikmiş!
-                                    </span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-warning text-dark">
-                                        <i class="fa fa-clock"></i> Bekliyor
-                                    </span>
-                                }
+                                <span class="badge bg-danger">
+                                    <i class="fa fa-exclamation-circle me-1"></i> Gecikmiş @daysLate gün
+                                </span>
                             </td>
                             <td>
                                 @if (!item.IsReturned)
@@ -97,3 +78,22 @@
         </div>
     </div>
 </div>
+<div class="container mt-3">
+    <div id="akordiyon">
+        <div class="card">
+            <div class="card-header">
+                <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
+                    <i class="fa-solid fa-circle-exclamation me-2"></i>Uyarı
+                </a>
+            </div>
+            <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
+                <div class="card-body">
+                    <div class="alert alert-danger" role="alert">
+                        Gecikmede olan ödünç kitaplar için öğrenciye <i class="fa fa-phone"></i> ikonundan mail/telefon bilgileri yardımıyla ulaşınız.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
