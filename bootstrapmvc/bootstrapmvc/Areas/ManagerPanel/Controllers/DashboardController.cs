@@ -77,6 +77,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             return View(karaListe);
         }
+
     }
 
     

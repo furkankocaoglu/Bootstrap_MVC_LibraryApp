@@ -2230,6 +2230,7 @@
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\StudentController.cs" />
     <Compile Include="Areas\ManagerPanel\Data\ManagerLoginViewModel.cs" />
+    <Compile Include="Areas\ManagerPanel\Data\StudentBorrowHistoryViewModel.cs" />
     <Compile Include="Areas\ManagerPanel\Filters\ManagerLoginRequiredFilterAttribute.cs" />
     <Compile Include="Areas\ManagerPanel\ManagerPanelAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
@@ -2270,6 +2271,8 @@
     <Content Include="Areas\ManagerPanel\Views\Dashboard\BlackListStats.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\Overdue.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\NotOverdue.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Borrow\StudentHistory.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Borrow\StudentPenalties.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

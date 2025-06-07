@@ -11,7 +11,8 @@
                 <i class="fa-solid fa-list"></i> Süresi Geçmiş Ödünç Alınan Kitaplar
             </h4>
             <div>
-                <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-light" title="Geri Dön"> Geri Dön
+                <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-light" title="Geri Dön">
+                    Geri Dön
                 </a>
                 <a href="@Url.Action("Create", "Borrow")" class="btn btn-outline-light" title="Yeni Ödünç İşlemi">
                     <i class="fa fa-plus"></i> Yeni Ödünç İşlemi
@@ -75,6 +76,11 @@
             <a href="#top" class="text-decoration-none">
                 <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
             </a>
+        </div>
+        <div class="card-footer">
+            <span class="text-success fw-semibold">
+                <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
+            </span>
         </div>
     </div>
 </div>

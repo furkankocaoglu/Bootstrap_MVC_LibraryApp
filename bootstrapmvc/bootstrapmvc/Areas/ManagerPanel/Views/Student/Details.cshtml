@@ -18,13 +18,18 @@
 
 <div class="container mt-3">
     <div class="card">
-        <div class="card-header">
-            <h4 class="card-title float-start">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">
                 <i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Bilgileri
             </h4>
-            <a href="@Url.Action("Index", "Student")" class="btn btn-secondary float-end">
-               Öğrenci Listesine Dön
-            </a>
+            <div>
+                <a href="@Url.Action("Index", "Student")" class="btn btn-secondary me-2">
+                    <i class="fa-solid fa-list"></i> Öğrenci Listesine Dön
+                </a>
+                <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.ID })" class="btn btn-info">
+                    <i class="fa-solid fa-book-open-reader me-2"></i> Ödünç Kitap Geçmişi
+                </a>
+            </div>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">

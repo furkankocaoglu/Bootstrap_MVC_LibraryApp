@@ -1,0 +1,139 @@
+﻿@model bootstrapmvc.Areas.ManagerPanel.Data.StudentBorrowHistoryViewModel
+
+@{
+    ViewBag.Title = "StudentHistory";
+    Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
+    var today = DateTime.Today;
+}
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">
+                <i class="fa-solid fa-book me-2"></i> @Model.Student.Name @Model.Student.Surname - Kitap Geçmişi
+            </h4>
+            <div>
+                <a href="@Url.Action("Index", "Student")" class="btn btn-secondary me-2">
+                    <i class="fa-solid fa-list"></i> Öğrenci Listesine Dön
+                </a>
+                <a href="@Url.Action("Details", "Student", new { id = Model.Student.ID })" class="btn btn-primary">
+                    <i class="fa-solid fa-user"></i> Detaya Geri Dön
+                </a>
+                &nbsp;
+                <a href="@Url.Action("StudentPenalties", "Borrow", new { id = Model.Student.ID })" class="btn btn-danger">
+                    <i class="fa-solid fa-coins me-2"></i> Toplam Ceza
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Kitap</th>
+                            <th>Aldığı Tarih</th>
+                            <th>Taahhüt Ettiği Tarih</th>
+                            <th>Getirdiği Tarih</th>
+                            <th>Gecikme Cezası</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.BorrowHistory)
+                        {
+                            string rowClass = "";
+                            string statusBadgeClass = "";
+                            string statusText = "";
+
+                            if (!item.IsReturned) // Teslim edilmemiş
+                            {
+                                if (item.DueDate.Date < DateTime.Today) // Tarihi geçmiş, gecikmiş
+                                {
+                                    rowClass = "table-danger";
+                                    statusBadgeClass = "bg-danger";
+                                    statusText = "Gecikmiş";
+                                }
+                                else // Süresi devam eden
+                                {
+                                    rowClass = "table-warning";
+                                    statusBadgeClass = "bg-warning text-dark";
+                                    statusText = "Bekleniyor";
+                                }
+                            }
+                            else // Teslim edilmiş
+                            {
+                                if (item.Penalty > 0) // Ceza var
+                                {
+                                    rowClass = "table-danger";
+                                    statusBadgeClass = "bg-danger";
+                                    statusText = "Gecikmeli İade";
+                                }
+                                else if (item.DueDate.Date < item.ReturnDate?.Date) // Ceza affedilmiş ama gecikmiş iade
+                                {
+                                    // Ceza sıfırlanmış (Penalty = 0), ama iade gecikmiş, mavi gösterelim
+                                    rowClass = "table-primary";
+                                    statusBadgeClass = "bg-primary";
+                                    statusText = "Ceza Affedildi";
+                                }
+                                else // Zamanında iade
+                                {
+                                    rowClass = "table-success";
+                                    statusBadgeClass = "bg-success";
+                                    statusText = "İade Edildi";
+                                }
+                            }
+
+                            <tr class="@rowClass">
+                                <td>@item.Book.Name</td>
+                                <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
+                                <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                                <td>
+                                    @if (item.IsReturned && item.ReturnDate.HasValue)
+                                    {
+                                        @item.ReturnDate.Value.ToString("dd.MM.yyyy")
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Bekleniyor</span>
+                                    }
+                                </td>
+                                <td>@item.Penalty.ToString("C")</td>
+                                <td>
+                                    <span class="badge @statusBadgeClass">@statusText</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <a href="#top" class="text-decoration-none">
+                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div id="akordiyon">
+        <div class="card">
+            <div class="card-header">
+                <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
+                    <i class="fas fa-triangle-exclamation me-2"></i>Bilgi
+                </a>
+            </div>
+            <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
+                <div class="card-body">
+                    <div class="alert" role="alert">
+                        <ul class="mb-0">
+                            <li><span class="badge bg-success me-1">&nbsp;</span> Zamanında teslim edilen ödünç kitaplar yeşil renk ile gösterilmiştir.</li>
+                            <li><span class="badge bg-danger me-1">&nbsp;</span> Gecikmeli iade edilen veya süresi geçmiş ve henüz teslim edilmeyen kitaplar kırmızı renk ile gösterilmiştir.</li>
+                            <li><span class="badge bg-primary me-1">&nbsp;</span> Ceza affedilen gecikmeli iadeler mavi renk ile gösterilmiştir.</li>
+                            <li><span class="badge bg-warning text-dark me-1">&nbsp;</span> Henüz teslim edilmemiş ve süresi devam eden kitaplar sarı renk ile gösterilmiştir.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

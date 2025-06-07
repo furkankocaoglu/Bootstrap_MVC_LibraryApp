@@ -20,41 +20,46 @@
             </div>
         </div>
     </div>
-
     <div class="card mt-4">
-        <div class="card-header bg-danger text-white">
-            <i class="fa-solid fa-triangle-exclamation me-1"></i> Cezalar
-        </div>
-        <div class="card-body table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th><i class="fa-solid fa-user me-1"></i> Öğrenci Ad-Soyad</th>
-                        <th>Öğrenci No</th>
-                        <th>Bölüm</th>
-                        <th>Ceza Tutarı (₺)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                <a href="@Url.Action("Details", "Student", new { id = item.Student.ID })" class="btn btn-sm btn-primary" title="Öğrenci Hakkında Bilgi">
-                                    <i class="fa-solid fa-info-circle text-white"></i>
-                                </a>
-                                @item.Student.Name @item.Student.Surname
-                            </td>
-                            <td>@item.Student.StudentNumber</td>
-                            <td>@item.Student.Department</td>
-                            <td>@item.Penalty</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <a href="#top" class="text-decoration-none">
-                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-triangle-exclamation me-2"></i> Cezalar
+            </div>
+            <a href="@Url.Action("Index", "BlackList")" class="btn btn-danger" title="Ceza İşlemleri">
+                <i class="fa-solid fa-skull me-1"></i> Af İşlemlerine Git
             </a>
         </div>
     </div>
+    <div class="card-body table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th><i class="fa-solid fa-user me-1"></i> Öğrenci Ad-Soyad</th>
+                    <th>Öğrenci No</th>
+                    <th>Bölüm</th>
+                    <th>Ceza Tutarı (₺)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Details", "Student", new { id = item.Student.ID })" class="btn btn-sm btn-primary" title="Öğrenci Hakkında Bilgi">
+                                <i class="fa-solid fa-info-circle text-white"></i>
+                            </a>
+                            @item.Student.Name @item.Student.Surname
+                        </td>
+                        <td>@item.Student.StudentNumber</td>
+                        <td>@item.Student.Department</td>
+                        <td>@item.Penalty</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="#top" class="text-decoration-none">
+            <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+        </a>
+    </div>
 </div>
+

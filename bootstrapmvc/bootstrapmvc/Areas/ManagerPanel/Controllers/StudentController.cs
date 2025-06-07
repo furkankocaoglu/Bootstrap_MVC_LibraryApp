@@ -122,8 +122,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             return RedirectToAction("Index", "Student");
         }
         public ActionResult Details(int? id)
-        {
-            
+        {   
             var student = db.Students.Find(id);
 
             return View(student);

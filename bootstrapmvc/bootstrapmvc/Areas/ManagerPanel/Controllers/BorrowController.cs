@@ -1,9 +1,11 @@
-﻿using bootstrapmvc.Areas.ManagerPanel.Filters;
+﻿using bootstrapmvc.Areas.ManagerPanel.Data;
+using bootstrapmvc.Areas.ManagerPanel.Filters;
 using bootstrapmvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -96,7 +98,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
             }
 
-            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned) .Select(b => b.BookID).ToList();
+            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
 
             ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber", model.StudentID);
             ViewBag.BookID = new SelectList(db.Books.Where(b => b.IsActive && !b.IsDeleted && !oduncteOlanKitap.Contains(b.ID)), "ID", "Name", model.BookID);
@@ -150,6 +152,43 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             return View(gecmemis);
         }
+        public ActionResult StudentHistory(int? id)
+        {
+
+            var student = db.Students.Find(id);
+
+            var history = db.Borrows.Where(b => b.StudentID == id).Include(b => b.Book).OrderByDescending(b => b.BorrowDate).ToList();
+
+            var viewModel = new StudentBorrowHistoryViewModel
+            {
+                Student = student,
+                BorrowHistory = history
+            };
+
+            return View(viewModel);
+        }
+        public ActionResult StudentPenalties(int? id)
+        {
+            if (!id.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var student = db.Students.Find(id.Value);
+
+            if (student == null) return HttpNotFound();
+
+            var borrowHistory = db.Borrows.Where(b => b.StudentID == id.Value).OrderByDescending(b => b.BorrowDate).ToList();
+
+            decimal totalPenalty = borrowHistory.Where(b => b.IsReturned && b.Penalty > 0).Sum(b => b.Penalty);
+
+            var viewModel = new StudentBorrowHistoryViewModel
+            {
+                Student = student,
+                BorrowHistory = borrowHistory,
+                TotalPenalty = totalPenalty
+            };
+
+            return View(viewModel);
+        }
+
 
 
     }
