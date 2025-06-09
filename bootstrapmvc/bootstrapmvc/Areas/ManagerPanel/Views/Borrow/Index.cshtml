@@ -14,91 +14,94 @@
 
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">
-                <i class="fa-solid fa-list"></i> Ödünç Alınan Kitaplar
-            </h4>
-            <div>
-                <a href="@Url.Action("NotOverdue", "Borrow")" class="btn btn-outline-light" title="Ödünç Aşaması Devam Eden Kitaplar">
-                    <i class="fa fa-clock"></i> Ödünç Aşaması Devam Edenler
+        <div class="card-header">
+            <h4 class="float-start"> <i class="fa-solid fa-list me-1"></i> Tüm Kayıtlar</h4>
+            <div class="float-end">
+                <a href="@Url.Action("NotOverdue", "Borrow")" class="btn btn-outline-dark" title="Ödünç Aşaması Devam Eden Kitaplar">
+                    <i class="fa fa-clock"></i> Devam Edenler
                 </a>
-                <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-light" title="Tüm Gecikmede Olan Kitaplar">
+                &nbsp;
+                <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-danger me-2" title="Tüm Gecikmede Olan Kitaplar">
                     <i class="fa fa-exclamation-circle"></i> Gecikenler
                 </a>
-                <a href="@Url.Action("_Index", "Borrow")" class="btn btn-outline-light" title="Teslim Edilen Kitaplar">
+                <a href="@Url.Action("_Index", "Borrow")" class="btn btn-outline-success me-2" title="Teslim Edilen Kitaplar">
                     <i class="fa fa-check"></i> Teslim Edilenler
                 </a>
-                <a href="@Url.Action("Create", "Borrow")" class="btn btn-outline-light" title="Yeni Ödünç İşlemi">
+                <a href="@Url.Action("Create", "Borrow")" class="btn btn-outline-primary" title="Yeni Ödünç İşlemi">
                     <i class="fa fa-plus"></i> Yeni Ödünç İşlemi
                 </a>
             </div>
         </div>
-        <div class="card-body table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
-                        <th>Öğrenci No</th>
-                        <th>Kitap</th>
-                        <th>Alınma Tarihi</th>
-                        <th>Geri Getirme Tarihi</th>
-                        <th>Geri Geldi Mi?</th>
-                        <th>İşlem</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        var dueEndOfDay = item.DueDate.Date.AddDays(1).AddSeconds(-1);
-                        bool isLate = DateTime.Now > dueEndOfDay;
 
-                        <tr>
-                            <td>@item.Student.Name @item.Student.Surname</td>
-                            <td>@item.Student.StudentNumber</td>
-                            <td>@item.Book.Name</td>
-                            <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
-                            <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
-                            <td>
-                                @if (isLate)
-                                {
-                                    <span class="badge bg-danger">
-                                        <i class="fa fa-exclamation-circle"></i> Gecikmiş!
-                                    </span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-warning text-dark">
-                                        <i class="fa fa-clock"></i> Bekliyor
-                                    </span>
-                                }
-                            </td>
-                            <td>
-                                @if (!item.IsReturned)
-                                {
-                                    <a href="@Url.Action("Return", "Borrow", new { id = item.ID })"
-                                       class="btn btn-success btn-sm"
-                                       onclick="return confirm('Öğrenci kitabı getirdiyse işlemi devam ettiriniz.');"
-                                       title="Kitabı iade al">
-                                        <i class="fa fa-undo"></i> İade Al
-                                    </a>
-                                }
-                                else
-                                {
-                                    <span class="text-muted">-</span>
-                                }
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <a href="#top" class="text-decoration-none">
-                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
-            </a>
-        </div>
         <div class="card-footer">
             <span class="text-success fw-semibold">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
             </span>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
+                            <th>Öğrenci No</th>
+                            <th>Kitap</th>
+                            <th>Alınma Tarihi</th>
+                            <th>Geri Getirme Tarihi</th>
+                            <th>Geri Geldi Mi?</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            var dueEndOfDay = item.DueDate.Date.AddDays(1).AddSeconds(-1);
+                            bool isLate = DateTime.Now > dueEndOfDay;
+
+                            <tr>
+                                <td>@item.Student.Name @item.Student.Surname</td>
+                                <td>@item.Student.StudentNumber</td>
+                                <td>@item.Book.Name</td>
+                                <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
+                                <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                                <td>
+                                    @if (isLate)
+                                    {
+                                        <span class="badge bg-danger">
+                                            <i class="fa fa-exclamation-circle"></i> Gecikmiş!
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-warning text-dark">
+                                            <i class="fa fa-clock"></i> Bekliyor
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!item.IsReturned)
+                                    {
+                                        <a href="@Url.Action("Return", "Borrow", new { id = item.ID })"
+                                           class="btn btn-success btn-sm"
+                                           onclick="return confirm('Öğrenci kitabı getirdiyse işlemi devam ettiriniz.');"
+                                           title="Kitabı iade al">
+                                            <i class="fa fa-undo"></i> İade Al
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">-</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="#top" class="text-decoration-none">
+                    <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+                </a>
+            </div>
         </div>
     </div>
 </div>

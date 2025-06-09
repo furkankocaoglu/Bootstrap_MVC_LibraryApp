@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "StudentHistory";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
-    var today = DateTime.Today;
 }
 
 <div class="container mt-3">
@@ -30,12 +29,12 @@
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
-                            <th>Kitap</th>
-                            <th>Aldığı Tarih</th>
-                            <th>Taahhüt Ettiği Tarih</th>
-                            <th>Getirdiği Tarih</th>
-                            <th>Gecikme Cezası</th>
-                            <th>Durum</th>
+                            <th><i class="fa-solid fa-book-open me-1"></i> Kitap</th>
+                            <th><i class="fa-solid fa-calendar-plus me-1"></i> Aldığı Tarih</th>
+                            <th><i class="fa-solid fa-calendar-check me-1"></i> Taahhüt Tarihi</th>
+                            <th><i class="fa-solid fa-calendar-day me-1"></i> Getirdiği Tarih</th>
+                            <th><i class="fa-solid fa-coins me-1"></i> Gecikme Cezası</th>
+                            <th><i class="fa-solid fa-circle-info me-1"></i> Durum</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,7 +69,6 @@
                                 }
                                 else if (item.DueDate.Date < item.ReturnDate?.Date) // Ceza affedilmiş ama gecikmiş iade
                                 {
-                                    // Ceza sıfırlanmış (Penalty = 0), ama iade gecikmiş, mavi gösterelim
                                     rowClass = "table-primary";
                                     statusBadgeClass = "bg-primary";
                                     statusText = "Ceza Affedildi";
@@ -97,7 +95,20 @@
                                         <span class="text-muted">Bekleniyor</span>
                                     }
                                 </td>
-                                <td>@item.Penalty.ToString("C")</td>
+                                <td>
+                                    @if (!item.IsReturned && item.DueDate.Date < DateTime.Today)
+                                    {
+                                        <span class="text-muted">-</span> <!-- Gecikmiş, henüz iade edilmemiş -->
+                                    }
+                                    else if (item.IsReturned && item.Penalty == 0 && item.ReturnDate.HasValue && item.DueDate.Date < item.ReturnDate.Value.Date)
+                                    {
+                                        <span class="text-muted">Ceza Sıfırlandı</span>
+                                    }
+                                    else
+                                    {
+                                        @item.Penalty.ToString("C")
+                                    }
+                                </td>
                                 <td>
                                     <span class="badge @statusBadgeClass">@statusText</span>
                                 </td>
@@ -124,12 +135,15 @@
             <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
                 <div class="card-body">
                     <div class="alert" role="alert">
-                        <ul class="mb-0">
-                            <li><span class="badge bg-success me-1">&nbsp;</span> Zamanında teslim edilen ödünç kitaplar yeşil renk ile gösterilmiştir.</li>
-                            <li><span class="badge bg-danger me-1">&nbsp;</span> Gecikmeli iade edilen veya süresi geçmiş ve henüz teslim edilmeyen kitaplar kırmızı renk ile gösterilmiştir.</li>
-                            <li><span class="badge bg-primary me-1">&nbsp;</span> Ceza affedilen gecikmeli iadeler mavi renk ile gösterilmiştir.</li>
-                            <li><span class="badge bg-warning text-dark me-1">&nbsp;</span> Henüz teslim edilmemiş ve süresi devam eden kitaplar sarı renk ile gösterilmiştir.</li>
-                        </ul>
+                        <div><span class="badge bg-success me-1">&nbsp;</span> Zamanında teslim edilen ödünç kitaplar yeşil renk ile gösterilmiştir.</div>
+                        <div><span class="badge bg-danger me-1">&nbsp;</span> Gecikmeli iade edilen veya süresi geçmiş ve henüz teslim edilmeyen kitaplar kırmızı renk ile gösterilmiştir.</div>
+                        <div><span class="badge bg-primary me-1">&nbsp;</span> Cezası affedilen gecikmeli iadeler mavi renk ile gösterilmiştir.</div>
+                        <div><span class="badge bg-warning text-dark me-1">&nbsp;</span> Henüz teslim edilmemiş ve süresi devam eden kitaplar sarı renk ile gösterilmiştir.</div>
+                        <br />
+                        <div>
+                            <i class="fa-solid fa-coins me-1"></i>
+                            <strong>Gecikme cezası öğrencinin kitabı iade ettiği gün itibariyle hesaplanarak "Gecikme Cezası" sütununa işlenmektedir.</strong>
+                        </div>
                     </div>
                 </div>
             </div>

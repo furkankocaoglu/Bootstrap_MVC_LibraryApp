@@ -169,15 +169,12 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult StudentPenalties(int? id)
         {
-            if (!id.HasValue) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var student = db.Students.Find(id.Value);
+            var student = db.Students.Find(id);
 
-            if (student == null) return HttpNotFound();
+            var borrowHistory = db.Borrows.Where(b => b.StudentID == id).OrderByDescending(b => b.BorrowDate).ToList();
 
-            var borrowHistory = db.Borrows.Where(b => b.StudentID == id.Value).OrderByDescending(b => b.BorrowDate).ToList();
-
-            decimal totalPenalty = borrowHistory.Where(b => b.IsReturned && b.Penalty > 0).Sum(b => b.Penalty);
+            var totalPenalty = borrowHistory.Where(b => b.IsReturned && b.Penalty > 0).Sum(b => b.Penalty);
 
             var viewModel = new StudentBorrowHistoryViewModel
             {

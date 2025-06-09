@@ -7,54 +7,58 @@
 
 <div class="container mt-5">
     <div class="card">
-        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">
-                <i class="fa fa-check-circle"></i> İade Edilen Kitaplar
+        <div class="card-header">
+            <h4 class="float-start text-success">
+                <i class="fa fa-check-circle me-1"></i> İade Edilen Kitaplar
             </h4>
-            <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-light">
+            <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-dark float-end">
                 <i class="fa fa-arrow-left"></i> Devam Eden Ödünçler
             </a>
         </div>
-        <div class="card-body table-responsive">
-            <table class="table table-striped table-hover">
-                <thead class="table-success">
-                    <tr>
-                        <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
-                        <th>Öğrenci No</th>
-                        <th>Kitap</th>
-                        <th>Alınma Tarihi</th>
-                        <th>Geri Getirme Tarihi</th>
-                        <th>Getirdiği Tarih</th>
-                        <th>Durum</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.Student.Name @item.Student.Surname</td>
-                            <td>@item.Student.StudentNumber</td>
-                            <td>@item.Book.Name</td>
-                            <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
-                            <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
-                            <td>@(item.ReturnDate?.ToString("dd.MM.yyyy") ?? "-")</td>
-                            <td>
-                                <span class="badge bg-success">
-                                    <i class="fa fa-check-circle"></i> İade Edildi
-                                </span>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <a href="#top" class="text-decoration-none">
-                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
-            </a>
-        </div>
+
         <div class="card-footer">
             <span class="text-success fw-semibold">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
             </span>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-user-graduate me-2"></i> Öğrenci Ad-Soyad</th>
+                            <th>Öğrenci No</th>
+                            <th>Kitap</th>
+                            <th>Alınma Tarihi</th>
+                            <th>Taahhüt Ettiği Tarih</th>
+                            <th>Getirdiği Tarih</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Student.Name @item.Student.Surname</td>
+                                <td>@item.Student.StudentNumber</td>
+                                <td>@item.Book.Name</td>
+                                <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
+                                <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                                <td>@(item.ReturnDate?.ToString("dd.MM.yyyy") ?? "-")</td>
+                                <td>
+                                    <span class="badge bg-success">
+                                        <i class="fa fa-check-circle"></i> İade Edildi
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="#top" class="text-decoration-none">
+                    <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+                </a>
+            </div>
         </div>
     </div>
 </div>
