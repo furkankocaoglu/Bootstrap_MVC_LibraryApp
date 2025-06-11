@@ -38,12 +38,13 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 {
                     db.Books.Add(model);
                     db.SaveChanges();
+                    TempData["mesaj"] = "Kitap başarılı bir şekilde eklendi.";
                     return RedirectToAction("Index", "Book");
 
                 }
                 catch
                 {
-                    ViewBag.mesaj = "Bir hata oluştu";
+                    TempData["mesaj"] = "Bir hata oluştu";
                 }
             }
             return View(model);
@@ -76,7 +77,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
                 catch
                 {
-                    ViewBag.mesaj = "Bir hata oluştu";
+                    TempData["mesaj"] = "Bir hata oluştu";
                 }
             }
             return View(model);

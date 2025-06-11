@@ -6,13 +6,13 @@
 
 <div class="container mt-5">
     <h3>
-        <strong>@Model.Student.Name </strong>
-        <strong>@Model.Student.Surname </strong>
+        <strong>@Model.StudentName </strong>
+        <strong>@Model.StudentSurname </strong>
     </h3>
     <hr />
-    <h4>Toplam Ceza Tutarı: <span class="text-danger">@Model.TotalPenalty.ToString("C")</span></h4>
+    <h4>Toplam Ceza Tutarı => <span class="text-danger">@Model.TotalPenalty.ToString("C")</span></h4>
 
-    <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.Student.ID })" class="btn btn-secondary mt-3">
+    <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.StudentID })" class="btn btn-secondary mt-3">
         <i class="fa-solid fa-arrow-left me-2"></i> Geri Dön
     </a>
     <a href="@Url.Action("Index", "BlackList")" class="btn btn-secondary mt-3">

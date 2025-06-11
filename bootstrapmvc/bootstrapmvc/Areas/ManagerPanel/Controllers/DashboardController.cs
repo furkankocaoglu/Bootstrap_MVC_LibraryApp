@@ -49,14 +49,12 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult BorrowStats()
         {
+            var today = DateTime.Today;
+
             var toplamOdunc = db.Borrows.Count();
             var teslimEdilen = db.Borrows.Count(x => x.IsReturned);
             var teslimEdilmeyen = db.Borrows.Count(x => !x.IsReturned);
-
-            var today = DateTime.Now.Date;
-
-            var gecikenler = db.Borrows.Count(b =>!b.IsReturned && DbFunctions.TruncateTime(b.DueDate) < today
-            );
+            var gecikenler = db.Borrows.Count(b => !b.IsReturned && b.DueDate < today);
 
             ViewBag.ToplamOdunc = toplamOdunc;
             ViewBag.TeslimEdilen = teslimEdilen;

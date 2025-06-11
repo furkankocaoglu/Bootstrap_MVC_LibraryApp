@@ -1,4 +1,5 @@
-﻿using bootstrapmvc.Areas.ManagerPanel.Filters;
+﻿using bootstrapmvc.Areas.ManagerPanel.Data;
+using bootstrapmvc.Areas.ManagerPanel.Filters;
 using bootstrapmvc.Models;
 using System;
 using System.Collections.Generic;
@@ -14,16 +15,22 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index()
         {
-            var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0).ToList();
-
-            foreach (var borrow in cezaKontrol)
+            var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0).Select(b => new BlackListPenaltyViewModel
             {
-                borrow.Student = db.Students.FirstOrDefault(s => s.ID == borrow.StudentID);
-                borrow.Book = db.Books.FirstOrDefault(bk => bk.ID == borrow.BookID);
-            }
+                Penalty = b.Penalty,
+                StudentName = b.Student.Name,
+                StudentSurname = b.Student.Surname,
+                StudentNumber = b.Student.StudentNumber,
+                BookTitle = b.Book.Name,
+                DueDate = b.DueDate,
+                ReturnDate = b.ReturnDate,
+                StudentID = b.Student.ID,
 
-            return View(cezaKontrol);
+            }).ToList();
+
+            return View(cezaKontrol);          
         }
+
         public ActionResult ForgivePenalty(int studentId)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
         {
             var manager = Session["ManagerSession"] as Manager;

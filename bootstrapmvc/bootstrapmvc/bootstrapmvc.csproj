@@ -99,6 +99,7 @@
   <ItemGroup>
     <Content Include="Areas\ManagerPanel\Gorseller\1487184215-yonetici-ekrani.jpg" />
     <Content Include="Areas\ManagerPanel\Gorseller\istockphoto-949118068-612x612.jpg" />
+    <Content Include="Areas\ManagerPanel\Gorseller\library-1834222_1280.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css" />
@@ -2229,6 +2230,9 @@
     <Compile Include="Areas\ManagerPanel\Controllers\HomeController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\StudentController.cs" />
+    <Compile Include="Areas\ManagerPanel\Data\BlackListPenaltyViewModel.cs" />
+    <Compile Include="Areas\ManagerPanel\Data\BorrowDetailViewModel.cs" />
+    <Compile Include="Areas\ManagerPanel\Data\BorrowViewModel.cs" />
     <Compile Include="Areas\ManagerPanel\Data\ManagerLoginViewModel.cs" />
     <Compile Include="Areas\ManagerPanel\Data\StudentBorrowHistoryViewModel.cs" />
     <Compile Include="Areas\ManagerPanel\Filters\ManagerLoginRequiredFilterAttribute.cs" />

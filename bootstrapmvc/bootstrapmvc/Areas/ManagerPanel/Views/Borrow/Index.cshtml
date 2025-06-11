@@ -1,4 +1,4 @@
-﻿@model List<bootstrapmvc.Models.Borrow>
+﻿@model List<bootstrapmvc.Areas.ManagerPanel.Data.BorrowViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
@@ -12,13 +12,15 @@
     </div>
 }
 
-<div class="container mt-5">
+<div class="container mt-5"> 
     <div class="card">
         <div class="card-header">
-            <h4 class="float-start"> <i class="fa-solid fa-list me-1"></i> Tüm Kayıtlar</h4>
+            <h4 class="card-title float-start">
+                <i class="fa-solid fa-list me-1"></i> Tüm Kayıtlar
+            </h4>
             <div class="float-end">
-                <a href="@Url.Action("NotOverdue", "Borrow")" class="btn btn-outline-dark" title="Ödünç Aşaması Devam Eden Kitaplar">
-                    <i class="fa fa-clock"></i> Devam Edenler
+                <a href="@Url.Action("NotOverdue", "Borrow")" class="btn btn-outline-warning text-dark" title="Ödünç Aşaması Devam Eden Kitaplar">
+                    <i class="fa fa-clock text-dark"></i> Devam Edenler
                 </a>
                 &nbsp;
                 <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-danger me-2" title="Tüm Gecikmede Olan Kitaplar">
@@ -60,9 +62,9 @@
                             bool isLate = DateTime.Now > dueEndOfDay;
 
                             <tr>
-                                <td>@item.Student.Name @item.Student.Surname</td>
-                                <td>@item.Student.StudentNumber</td>
-                                <td>@item.Book.Name</td>
+                                <td>@item.StudentName @item.StudentSurname</td>
+                                <td>@item.StudentNumber</td>
+                                <td>@item.BookName</td>
                                 <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                                 <td>
@@ -88,10 +90,6 @@
                                            title="Kitabı iade al">
                                             <i class="fa fa-undo"></i> İade Al
                                         </a>
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">-</span>
                                     }
                                 </td>
                             </tr>

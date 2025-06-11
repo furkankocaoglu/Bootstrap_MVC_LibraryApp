@@ -7,7 +7,7 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="float-start"><i class="fa fa-clock"></i> Teslim Tarihi Geçmemiş Ödünç Kitaplar</h4>
+            <h4 class="card-title float-start"><i class="fa fa-clock text-warning"></i> Teslim Tarihi Geçmemiş Ödünç Kitaplar</h4>
             <div class="float-end">
                 <a href="@Url.Action("Overdue", "Borrow")" class="btn btn-outline-danger me-2" title="Gecikmiş Kitaplar">
                     <i class="fa fa-exclamation-circle"></i> Gecikmiş Kitaplar
@@ -17,13 +17,11 @@
                 </a>
             </div>
         </div>
-
         <div class="card-footer">
             <span class="text-success fw-semibold">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
             </span>
         </div>
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-dark">
@@ -49,7 +47,7 @@
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                                 <td>
                                     <span class="badge bg-warning text-dark">
-                                        <i class="fa fa-clock"></i> Bekliyor 
+                                        <i class="fa fa-clock"></i> Bekliyor
                                     </span>
                                 </td>
                                 <td>

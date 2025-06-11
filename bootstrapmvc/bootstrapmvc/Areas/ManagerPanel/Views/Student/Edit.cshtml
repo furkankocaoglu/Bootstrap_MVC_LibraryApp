@@ -17,9 +17,12 @@
         <div class="card-body">
             @using (Html.BeginForm())
             {
-                if (ViewBag.mesaj != null)
+                if (TempData["mesaj"] != null)
                 {
-                    <div class="alert alert-info">@ViewBag.mesaj</div>
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        @TempData["mesaj"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 }
 
                 <div class="mb-3">

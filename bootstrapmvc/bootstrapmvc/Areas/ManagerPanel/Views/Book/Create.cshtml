@@ -4,29 +4,32 @@
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
+
+
 <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title mb-0">
+            <h4 class="card-title float-start">
                 <span class="badge bg-success">Kitap Ekleme Sayfası</span>
             </h4>
         </div>
-
         <div class="card-body">
             @using (Html.BeginForm())
             {
-                if (ViewBag.mesaj != null)
+                if (TempData["mesaj"] != null)
                 {
-                    <div class="alert alert-info">@ViewBag.mesaj</div>
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        @TempData["mesaj"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 }
-
                 <div class="mb-3">
-                    <label for="Name" class="form-label"><strong>Yeni Kitap İsmi</strong></label>
+                    <label for="Name" class="form-label"><i class="fa-solid fa-book"></i> <strong>Yeni Kitap İsmi</strong></label>
                     @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name" } })
                     @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                 </div>
                 <div class="mb-3">
-                    <label for="Writer" class="form-label"><strong>Yazar Adı</strong></label>
+                    <label for="Writer" class="form-label"> <i class="fa-solid fa-user"></i> <strong>Yazar Adı</strong></label>
                     @Html.EditorFor(x => x.Writer, new { htmlAttributes = new { @class = "form-control", @id = "Writer" } })
                     @Html.ValidationMessageFor(x => x.Writer, "", new { @class = "text-danger" })
                 </div>

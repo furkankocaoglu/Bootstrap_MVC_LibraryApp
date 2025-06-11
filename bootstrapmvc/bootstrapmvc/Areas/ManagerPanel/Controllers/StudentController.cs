@@ -35,12 +35,13 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 {
                     db.Students.Add(model);
                     db.SaveChanges();
+                    TempData["mesaj"] = "Öğrenci başarılı bir şekilde eklendi.";
                     return RedirectToAction("Index", "Student");
 
                 }
                 catch
                 {
-                    ViewBag.mesaj = "Bir hata oluştu";
+                    TempData["mesaj"] = "Bir hata oluştu";
                 }
             }
             return View(model);
@@ -73,7 +74,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
                 catch
                 {
-                    ViewBag.mesaj = "Bir hata oluştu";
+                    TempData["mesaj"] = "Bir hata oluştu";
                 }
             }
             return View(model);
@@ -122,7 +123,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             return RedirectToAction("Index", "Student");
         }
         public ActionResult Details(int? id)
-        {   
+        {
             var student = db.Students.Find(id);
 
             return View(student);

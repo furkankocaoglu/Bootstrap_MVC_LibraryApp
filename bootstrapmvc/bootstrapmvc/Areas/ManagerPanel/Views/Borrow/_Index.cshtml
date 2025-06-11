@@ -1,4 +1,4 @@
-﻿@model List<bootstrapmvc.Models.Borrow>
+﻿@model List<bootstrapmvc.Areas.ManagerPanel.Data.BorrowViewModel>
 
 @{
     ViewBag.Title = "_Index";
@@ -8,10 +8,8 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="float-start text-success">
-                <i class="fa fa-check-circle me-1"></i> İade Edilen Kitaplar
-            </h4>
-            <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-dark float-end">
+            <h4 class="card-title float-start text-success"><i class="fa fa-check-circle me-1"></i> İade Edilen Kitaplar</h4>
+            <a href="@Url.Action("Index", "Borrow")" class="btn btn-outline-success float-end">
                 <i class="fa fa-arrow-left"></i> Devam Eden Ödünçler
             </a>
         </div>
@@ -40,9 +38,9 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Student.Name @item.Student.Surname</td>
-                                <td>@item.Student.StudentNumber</td>
-                                <td>@item.Book.Name</td>
+                                <td>@item.StudentName @item.StudentSurname</td>
+                                <td>@item.StudentNumber</td>
+                                <td>@item.BookName</td>
                                 <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                                 <td>@(item.ReturnDate?.ToString("dd.MM.yyyy") ?? "-")</td>

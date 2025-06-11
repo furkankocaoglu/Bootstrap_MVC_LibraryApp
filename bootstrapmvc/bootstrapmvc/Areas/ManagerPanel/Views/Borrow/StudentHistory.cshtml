@@ -7,27 +7,27 @@
 
 <div class="container mt-3">
     <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h4 class="card-title mb-0">
-                <i class="fa-solid fa-book me-2"></i> @Model.Student.Name @Model.Student.Surname - Kitap Geçmişi
+        <div class="card-header">
+            <h4 class="card-title float-start">
+                <i class="fa-solid fa-book me-2"></i> @Model.StudentName @Model.StudentSurname - Kitap Geçmişi
             </h4>
-            <div>
+            <div class="float-end">
                 <a href="@Url.Action("Index", "Student")" class="btn btn-secondary me-2">
                     <i class="fa-solid fa-list"></i> Öğrenci Listesine Dön
                 </a>
-                <a href="@Url.Action("Details", "Student", new { id = Model.Student.ID })" class="btn btn-primary">
+                <a href="@Url.Action("Details", "Student", new { id = Model.StudentID })" class="btn btn-primary">
                     <i class="fa-solid fa-user"></i> Detaya Geri Dön
                 </a>
                 &nbsp;
-                <a href="@Url.Action("StudentPenalties", "Borrow", new { id = Model.Student.ID })" class="btn btn-danger">
+                <a href="@Url.Action("StudentPenalties", "Borrow", new { id = Model.StudentID })" class="btn btn-danger">
                     <i class="fa-solid fa-coins me-2"></i> Toplam Ceza
                 </a>
             </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table">
-                    <thead class="table-dark">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
                             <th><i class="fa-solid fa-book-open me-1"></i> Kitap</th>
                             <th><i class="fa-solid fa-calendar-plus me-1"></i> Aldığı Tarih</th>
@@ -82,7 +82,7 @@
                             }
 
                             <tr class="@rowClass">
-                                <td>@item.Book.Name</td>
+                                <td>@item.BookName</td>
                                 <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                                 <td>

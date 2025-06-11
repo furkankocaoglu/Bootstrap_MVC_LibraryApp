@@ -1,4 +1,4 @@
-﻿@model List<bootstrapmvc.Models.Borrow>
+﻿@model List<bootstrapmvc.Areas.ManagerPanel.Data.BlackListPenaltyViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
@@ -42,62 +42,67 @@
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
             </span>
         </div>
-        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">
+        <div class="card-header bg-danger text-white">
+            <h4 class="float-start">
                 <i class="fa-solid fa-skull me-2"></i><i class="fa-solid fa-skull me-2"></i> <strong>Tüm Ceza Tutarları</strong>
             </h4>
-            <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
-               class="btn btn-danger btn-sm"
-               onclick="return confirm('Tüm öğrencilerin cezalarını sıfırlamak istediğinizden emin misiniz?');">
-                <i class="fa-solid fa-crown"></i> <strong>Af Çıkar</strong>
-            </a>
+            <div class="float-end">
+                <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
+                   class="btn btn-danger"
+                   onclick="return confirm('Tüm öğrencilerin cezalarını sıfırlamak istediğinizden emin misiniz?');">
+                    <i class="fa-solid fa-crown"></i> <strong>Af Çıkar</strong>
+                </a>
+            </div>
         </div>
-        <div class="card-body table-responsive">
-            <table class="table table-hover table-striped table-bordered align-middle">
-                <thead class="table-danger">
-                    <tr>
-                        <th><i class="fa-solid fa-user me-2"></i> Öğrenci Ad Soyad</th>
-                        <th>Öğrenci No</th>
-                        <th>Getirmediği Kitap</th>
-                        <th>Ceza Tutarı (₺)</th>
-                        <th>Gecikme Gün Sayısı</th>
-                        <th>Getirmesi Gereken Tarih</th>
-                        <th>Getirdiği Tarih</th>
-                        <th>İşlem</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
                         <tr>
-                            <td>
-                                <i class="fa-solid fa-crown me-2 text-dark"></i>
-                                @item.Student.Name @item.Student.Surname
-                            </td>
-                            <td>@item.Student.StudentNumber</td>
-                            <td>@item.Book.Name</td>
-                            <td>
-                                <span class="badge bg-danger">@item.Penalty TL</span>
-                            </td>
-                            <td>
-                                @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0) gün
-                            </td>
-                            <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
-                            <td>@item.ReturnDate</td>
-                            <td>
-                                <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
-                                   class="btn btn-danger btn-sm"
-                                   onclick="return confirm('Öğrenci ceza tutarını ödedi ve tekrarı olmayacağını belirtiyor ise işleme devam ediniz.');">
-                                    <i class="fa-solid fa-hands-praying"></i><strong>&nbsp;Affet</strong>
-                                </a>
-                            </td>
+                            <th>Öğrenci Ad Soyad</th>
+                            <th>Öğrenci No</th>
+                            <th>Getirmediği Kitap</th>
+                            <th>Ceza Tutarı (₺)</th>
+                            <th>Gecikme Gün Sayısı</th>
+                            <th>Getirmesi Gereken Tarih</th>
+                            <th>Getirdiği Tarih</th>
+                            <th>İşlem</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-            <a href="#top" class="text-decoration-none">
-                <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
-            </a>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <i class="fa-solid fa-skull me-2"></i>
+                                    @item.StudentName @item.StudentSurname
+                                </td>
+                                <td>@item.StudentNumber</td>
+                                <td>@item.BookTitle</td>
+                                <td>
+                                    <span class="badge bg-danger">@item.Penalty</span>
+                                </td>
+                                <td>
+                                    @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0) gün
+                                </td>
+                                <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
+                                <td>@item.ReturnDate</td>
+                                <td>
+                                    <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
+                                       class="btn btn-danger"
+                                       onclick="return confirm('Öğrenci ceza tutarını ödedi ve tekrarı olmayacağını belirtiyor ise işleme devam ediniz.');">
+                                        <i class="fa-solid fa-hands-praying"></i><strong>&nbsp;Affet</strong>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div />
+                <a href="#top" class="text-decoration-none">
+                    <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
+                </a>
+            </div>
         </div>
     </div>
 </div>
