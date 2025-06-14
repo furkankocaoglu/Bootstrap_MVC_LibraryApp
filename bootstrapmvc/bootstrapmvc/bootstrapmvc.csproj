@@ -2227,6 +2227,7 @@
     <Compile Include="Areas\ManagerPanel\Controllers\BookController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\BorrowController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\ManagerPanel\Controllers\DefaultController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\HomeController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\LoginController.cs" />
     <Compile Include="Areas\ManagerPanel\Controllers\StudentController.cs" />

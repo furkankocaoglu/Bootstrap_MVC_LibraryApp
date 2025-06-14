@@ -88,10 +88,10 @@
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
                                 <td>@item.ReturnDate</td>
                                 <td>
-                                    <a href="@Url.Action("ForgivePenalty", "BlackList", new { studentId = item.StudentID })"
-                                       class="btn btn-danger"
+                                    <a href="@Url.Action("ForgivePenalty", "BlackList", new { id = item.BorrowID })"
+                                       class="btn btn-outline-danger text-white"
                                        onclick="return confirm('Öğrenci ceza tutarını ödedi ve tekrarı olmayacağını belirtiyor ise işleme devam ediniz.');">
-                                        <i class="fa-solid fa-hands-praying"></i><strong>&nbsp;Affet</strong>
+                                        <i class="fa-solid fa-hands-praying "></i><strong>&nbsp;Affet</strong>
                                     </a>
                                 </td>
                             </tr>

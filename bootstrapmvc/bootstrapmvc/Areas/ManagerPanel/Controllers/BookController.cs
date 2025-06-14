@@ -114,7 +114,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult ActivateAll()
         {
-            var silinmisKitaplar = db.Books.Where(c => c.IsDeleted == true) .ToList();
+            var silinmisKitaplar = db.Books.Where(c => c.IsDeleted == true).ToList();
 
             foreach (var kitap in silinmisKitaplar)
             {

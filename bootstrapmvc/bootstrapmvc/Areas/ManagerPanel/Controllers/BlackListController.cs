@@ -17,6 +17,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         {
             var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0).Select(b => new BlackListPenaltyViewModel
             {
+                BorrowID = b.ID,
                 Penalty = b.Penalty,
                 StudentName = b.Student.Name,
                 StudentSurname = b.Student.Surname,
@@ -31,7 +32,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             return View(cezaKontrol);          
         }
 
-        public ActionResult ForgivePenalty(int studentId)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
+        public ActionResult ForgivePenalty(int id)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
         {
             var manager = Session["ManagerSession"] as Manager;
 
@@ -41,18 +42,18 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 return RedirectToAction("Index", "BlackList");
             }
 
-            var ceza = db.Borrows.Where(b => b.StudentID == studentId && b.Penalty > 0).OrderByDescending(b => b.ReturnDate).FirstOrDefault();
+            var ceza = db.Borrows.FirstOrDefault(b => b.ID == id && b.Penalty > 0);
 
             if (ceza == null)
             {
-                TempData["mesaj"] = "Bu öğrencinin affedilecek cezası bulunmamaktadır.";
+                TempData["mesaj"] = "Affedilecek ceza bulunamadı ya da zaten affedilmiş.";
                 return RedirectToAction("Index", "BlackList");
             }
 
             ceza.Penalty = 0;
             db.SaveChanges();
 
-            TempData["mesaj"] = "Öğrencinin cezası affedildi.";
+            TempData["mesaj"] = "Seçilen ceza affedildi.";
             return RedirectToAction("Index", "BlackList");
         }
 
