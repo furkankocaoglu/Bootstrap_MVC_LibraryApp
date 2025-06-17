@@ -8,7 +8,18 @@
     var db = new bootstrapmvc.Models.Model1();
     var deletedCount = db.Books.Count(x => x.IsDeleted);
 }
-
+<div class="container mt-3">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
+                <i class="fa-solid fa-house me-1"></i> Anasayfa
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            <i class="fa-solid fa-book me-1"></i> Kitap Listesi
+        </li>
+    </ul>
+</div>
 @if (TempData["mesaj"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -61,12 +72,6 @@
                                     {
                                         <span class="badge bg-success">
                                             <i class="fa-solid fa-check-circle"></i> Evet
-                                        </span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-danger">
-                                            <i class="fa-solid fa-xmark-circle"></i> Hayır
                                         </span>
                                     }
                                 </td>

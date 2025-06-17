@@ -86,10 +86,10 @@
                                     @(item.ReturnDate != null ? (item.ReturnDate.Value - item.DueDate).Days : 0) gün
                                 </td>
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>
-                                <td>@item.ReturnDate</td>
+                                <td>@(item.ReturnDate?.ToString("dd.MM.yyyy"))</td>
                                 <td>
                                     <a href="@Url.Action("ForgivePenalty", "BlackList", new { id = item.BorrowID })"
-                                       class="btn btn-outline-danger text-white"
+                                       class="btn btn-outline-danger text-white btn-sm"
                                        onclick="return confirm('Öğrenci ceza tutarını ödedi ve tekrarı olmayacağını belirtiyor ise işleme devam ediniz.');">
                                         <i class="fa-solid fa-hands-praying "></i><strong>&nbsp;Affet</strong>
                                     </a>
@@ -117,7 +117,7 @@
             <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
                 <div class="card-body">
                     <div class="alert alert-danger" role="alert">
-                        Bir öğrencinin ceza geçmişi en fazla 2 gün olabilir. Ödünç kitap alabilmesi için ceza geçmişinde 2 gün üstünde cezası olmaması gerekmektedir. Yeni ödünç kaydı için bu cezalarında affedilmesi gerekmektedir.
+                        Bir öğrencinin ceza geçmişinde gecikme en fazla 2 gün olabilir. Ödünç kitap alabilmesi için ceza geçmişinde 2 gün üstünde cezası olmaması gerekmektedir. Yeni ödünç kaydı için bu cezalarında affedilmesi gerekmektedir.
                     </div>
                 </div>
             </div>

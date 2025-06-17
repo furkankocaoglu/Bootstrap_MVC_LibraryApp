@@ -97,6 +97,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\ManagerPanel\CSS\cover.css" />
+    <Content Include="Areas\ManagerPanel\CSS\sign-in.css" />
     <Content Include="Areas\ManagerPanel\Gorseller\1487184215-yonetici-ekrani.jpg" />
     <Content Include="Areas\ManagerPanel\Gorseller\istockphoto-949118068-612x612.jpg" />
     <Content Include="Areas\ManagerPanel\Gorseller\library-1834222_1280.jpg" />
@@ -2278,6 +2280,7 @@
     <Content Include="Areas\ManagerPanel\Views\Borrow\NotOverdue.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\StudentHistory.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\StudentPenalties.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Default\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

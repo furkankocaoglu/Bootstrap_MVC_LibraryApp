@@ -3,7 +3,23 @@
     ViewBag.Title = "_Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-
+<div class="container mt-3">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
+                <i class="fa-solid fa-house me-1"></i> Anasayfa
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Student")">
+                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            <i class="fa-solid fa-trash me-1"></i> Silinen Öğrenciler
+        </li>
+    </ul>
+</div>
 @if (TempData["mesaj"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -54,13 +70,7 @@
                             <td>@student.Surname</td>
                             <td>@student.StudentNumber</td>
                             <td>
-                                @if (student.IsActive)
-                                {
-                                    <span class="badge bg-success">
-                                        <i class="fa-solid fa-check-circle"></i> Evet
-                                    </span>
-                                }
-                                else
+                                @if (student.IsActive == false)
                                 {
                                     <span class="badge bg-danger">
                                         <i class="fa-solid fa-xmark-circle"></i> Hayır

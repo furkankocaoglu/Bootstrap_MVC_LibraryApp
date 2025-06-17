@@ -15,7 +15,23 @@
     int doluluk = (int)((dolu / (double)toplam) * 100);
 
 }
-
+<div class="container mt-3">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/ManagerPanel/Home">
+                <i class="fa-solid fa-house me-1"></i> Anasayfa
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Student")">
+                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            <i class="fa-solid fa-info-circle me-1"></i> Detay
+        </li>
+    </ul>
+</div>
 <div class="container mt-3">
     <div class="card">
         <div class="card-header">

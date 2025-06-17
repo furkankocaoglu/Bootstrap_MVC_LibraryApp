@@ -18,12 +18,12 @@
     @RenderSection("styles", false)
 </head>
 <body>
-    <div class="alert alert-success">
-        <strong><i class="fa-solid fa-rocket"></i> Hoşgeldin @m.Name!</strong>
+    <div class="alert alert-primary">
+        <strong><i class="fa-solid fa-user"></i> Hoşgeldin @m.Name</strong>
         <a href="@Url.Action("LogOut", "Login")"
-           class="btn btn-success btn-sm float-end rounded"
+           class="btn btn-outline-dark btn-sm float-end rounded"
            onclick="return confirm('Çıkış yapmak istediğinize emin misiniz?');">
-            <i class="fa-solid fa-right-from-bracket"></i> Çıkış
+            <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
         </a>
     </div>
     <div class="container mt-3">
@@ -59,7 +59,7 @@
                 </a>
             </li>
         </ul>
-        <div class="offcanvas offcanvas-start text-bg-dark" id="dashboard" data-bs-backdrop="false">
+        <div class="offcanvas offcanvas-end text-bg-dark" id="dashboard" data-bs-backdrop="true">
             <div class="offcanvas-header">
                 <h3 class="offcanvas-title">İstatistikler</h3>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>

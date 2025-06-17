@@ -29,7 +29,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                     }
                 }
             }
-            return View();
+            return View(new ManagerLoginViewModel());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -75,7 +75,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 Response.Cookies.Add(SavedCookie);
             }
 
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Default");
         }
     }
 }

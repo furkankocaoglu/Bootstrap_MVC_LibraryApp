@@ -8,7 +8,18 @@
     var db = new bootstrapmvc.Models.Model1();
     var deletedCount = db.Students.Count(x => x.IsDeleted);
 }
-
+<div class="container mt-3">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
+                <i class="fa-solid fa-house me-1"></i> Anasayfa
+            </a>
+        </li>
+        <li class="breadcrumb-item active">
+            <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+        </li>
+    </ul>
+</div>
 @if (TempData["mesaj"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -22,14 +33,14 @@
         <div class="card-header">
             <a href="@Url.Action("_Index", "Student")" class="btn btn-outline-danger float-start">
                 <i class="fa-solid fa-trash me-1"></i>
-                Silinen Öğrenciler <span class="badge bg-danger">@deletedCount</span>
+                Silinen Öğrenciler <span class="badge bg-danger d-print-none">@deletedCount</span>
             </a>
             <a href="@Url.Action("Create", "Student")" class="btn btn-outline-success float-end">
                 <i class="fa fa-plus"></i> Yeni Öğrenci Ekle
             </a>
         </div>
         <div class="card-footer">
-            <span class="text-success fw-semibold">
+            <span class="text-success fw-semibold d-print-none">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
             </span>
         </div>
@@ -42,8 +53,8 @@
                             <th>İsim</th>
                             <th>Soyisim</th>
                             <th>Öğrenci No</th>
-                            <th>Bölüm</th>
-                            <th>Sınıf</th>
+                            <th class="d-none d-sm-table-cell">Bölüm</th>
+                            <th class="d-none d-sm-table-cell">Sınıf</th>
                             <th>Kayıt Tarihi</th>
                             <th>Aktif Mi?</th>
                             <th>İşlemler</th>
@@ -61,20 +72,14 @@
                                 <td>@student.Name</td>
                                 <td>@student.Surname</td>
                                 <td>@student.StudentNumber</td>
-                                <td>@student.Department</td>
-                                <td>@student.Class</td>
+                                <td class="d-none d-sm-table-cell">@student.Department</td>
+                                <td class="d-none d-sm-table-cell">@student.Class</td>
                                 <td>@student.RegistrationDate.ToString("dd.MM.yyyy")</td>
                                 <td>
                                     @if (student.IsActive)
                                     {
                                         <span class="badge bg-success">
                                             <i class="fa-solid fa-check-circle"></i> Evet
-                                        </span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-danger">
-                                            <i class="fa-solid fa-xmark-circle"></i> Hayır
                                         </span>
                                     }
                                 </td>
