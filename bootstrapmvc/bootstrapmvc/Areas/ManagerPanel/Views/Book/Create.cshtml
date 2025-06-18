@@ -3,28 +3,27 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Book", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-book me-1"></i> Kitap Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-plus me-1"></i> Kitap Ekle
-        </li>
-    </ul>
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Book", new { area = "ManagerPanel" })">
+                    <i class="fa-solid fa-book me-1"></i> Kitap Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-plus me-1"></i> Kitap Ekle
+            </li>
+        </ol>
+    </nav>
 </div>
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="card">
         <div class="card-header">
             <h4 class="card-title float-start">
-                <span class="badge bg-success">Kitap Ekleme Sayfası</span>
+                <span class="badge bg-success">
+                    <i class="fas fa-book-medical me-2"></i> Kitap Ekleme Sayfası
+                </span>
             </h4>
         </div>
         <div class="card-body">

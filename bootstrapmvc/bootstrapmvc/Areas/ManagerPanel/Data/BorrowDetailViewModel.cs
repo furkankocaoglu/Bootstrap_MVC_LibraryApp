@@ -7,6 +7,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Data
 {
     public class BorrowDetailViewModel
     {
+        public int ID { get; set; }
         public string BookName { get; set; }
         public DateTime BorrowDate { get; set; }
         public DateTime DueDate { get; set; }

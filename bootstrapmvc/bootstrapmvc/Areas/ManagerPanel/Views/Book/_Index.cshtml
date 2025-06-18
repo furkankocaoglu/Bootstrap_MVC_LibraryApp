@@ -3,23 +3,6 @@
     ViewBag.Title = "_Index";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Book", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-book me-1"></i> Kitap Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-trash me-1"></i> Silinen Kitaplar
-        </li>
-    </ul>
-</div>
 @if (TempData["mesaj"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,7 +11,21 @@
     </div>
 }
 
-<div class="container mt-5">
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Book", new { area = "ManagerPanel" })">
+                    <i class="fa-solid fa-book me-1"></i> Kitap Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-trash me-1"></i> Silinen Kitaplar
+            </li>
+        </ol>
+    </nav>
+</div>
+<div class="container mt-3">
     <div class="card">
         <div class="card-header">
             <h4 class="card-title float-start">
@@ -46,49 +43,51 @@
             </span>
         </div>
         <div class="card-body">
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>İsim</th>
-                        <th>Yazar Adı</th>
-                        <th>Aktif Mi?</th>
-                        <th>Aktif Et</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var book in Model)
-                    {
+            <div class="table-responsive">
+                <table class="table table-dark table-striped">
+                    <thead>
                         <tr>
-                            <td>
-                                <span class="badge bg-secondary">
-                                    <i class="fa-solid fa-id-badge"></i> @book.ID
-                                </span>
-                            </td>
-                            <td>@book.Name</td>
-                            <td>@book.Writer</td>
-                            <td>
-                                @if (book.IsActive==false)
-                                {
-                                    <span class="badge bg-danger">
-                                        <i class="fa-solid fa-xmark-circle"></i> Hayır
-                                    </span>
-                                }
-                            </td>
-                            <td>
-                                <div class="btn-group btn-group-sm">
-                                    <a href="@Url.Action("Back", "Book", new { id = book.ID, area = "ManagerPanel" })"
-                                       class="btn btn-success"
-                                       title="Aktifleştir"
-                                       onclick="return confirm('Aktif etmek istediğinize emin misiniz?');">
-                                        <i class="fa-solid fa-rotate-left text-white"></i>
-                                    </a>
-                                </div>
-                            </td>
+                            <th>ID</th>
+                            <th>İsim</th>
+                            <th>Yazar Adı</th>
+                            <th>Aktif Mi?</th>
+                            <th>Aktif Et</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var book in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge bg-secondary">
+                                        <i class="fa-solid fa-id-badge"></i> @book.ID
+                                    </span>
+                                </td>
+                                <td>@book.Name</td>
+                                <td>@book.Writer</td>
+                                <td>
+                                    @if (book.IsActive == false)
+                                    {
+                                        <span class="badge bg-danger">
+                                            <i class="fa-solid fa-xmark-circle"></i> Hayır
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="@Url.Action("Back", "Book", new { id = book.ID, area = "ManagerPanel" })"
+                                           class="btn btn-success"
+                                           title="Aktifleştir"
+                                           onclick="return confirm('Aktif etmek istediğinize emin misiniz?');">
+                                            <i class="fa-solid fa-rotate-left text-white"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
             <a href="#top" class="text-decoration-none">
                 <i class="fa-solid fa-angles-up me-1"></i> Yukarıya Çık
             </a>

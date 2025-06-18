@@ -11,48 +11,27 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
     </div>
 }
-
-<div class="container mt-3">
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mesajimvar">Beni Oku</button>
-    <div class="modal fade" id="mesajimvar">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Bilgilendirme</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div style="height: 100px;">
-                        <p>Bu bölümde, kitap iade süresini aşan öğrenciler ve bu sürelerden doğan para cezaları yer almaktadır. Kara listedeki öğrencilerin ödünç alma işlemleri kısıtlanmıştır. Lütfen gerekli kontrolleri yapınız.</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Anladım</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br />
-
-<div class="container mt-0">
+<div class="container mt-5">
     <div class="card">
-        <div class="card-footer">
-            <span class="text-danger fw-semibold">
-                <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
-            </span>
-        </div>
         <div class="card-header bg-danger text-white">
             <h4 class="float-start">
                 <i class="fa-solid fa-skull me-2"></i><i class="fa-solid fa-skull me-2"></i> <strong>Tüm Ceza Tutarları</strong>
             </h4>
             <div class="float-end">
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#mesajimvar">
+                    <i class="fa-solid fa-eye me-1"></i><strong>Beni Oku</strong>
+                </button>
                 <a href="@Url.Action("ForgiveAllPenalties", "BlackList")"
                    class="btn btn-danger"
                    onclick="return confirm('Tüm öğrencilerin cezalarını sıfırlamak istediğinizden emin misiniz?');">
-                    <i class="fa-solid fa-crown"></i> <strong>Af Çıkar</strong>
+                    <i class="fa-solid fa-crown"></i><strong> Af Çıkar</strong>
                 </a>
             </div>
+        </div>
+        <div class="card-footer">
+            <span class="text-danger fw-semibold">
+                <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor
+            </span>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -106,20 +85,22 @@
         </div>
     </div>
 </div>
-<div class="container mt-3">
-    <div id="akordiyon">
-        <div class="card">
-            <div class="card-header">
-                <a href="#collapse1" class="btn text-black fw-bold" data-bs-toggle="collapse">
-                    <i class="fas fa-triangle-exclamation me-2"></i>Hatırlatma!
-                </a>
+<div class="modal fade" id="mesajimvar">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Bilgilendirme</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="collapse show" data-bs-parent="#akordiyon" id="collapse1">
-                <div class="card-body">
-                    <div class="alert alert-danger" role="alert">
-                        Bir öğrencinin ceza geçmişinde gecikme en fazla 2 gün olabilir. Ödünç kitap alabilmesi için ceza geçmişinde 2 gün üstünde cezası olmaması gerekmektedir. Yeni ödünç kaydı için bu cezalarında affedilmesi gerekmektedir.
-                    </div>
-                </div>
+            <div class="modal-body">
+                <p>
+                    Bu bölümde, kitap iade süresini aşan öğrenciler ve bu sürelerden doğan para cezaları yer almaktadır.
+                    Kara listedeki öğrencilerin ödünç alma işlemleri kısıtlanmıştır.
+                    Lütfen gerekli kontrolleri yapınız. Bir öğrencinin ceza geçmişinde gecikme en fazla 2 gün olabilir. Ödünç kitap alabilmesi için ceza geçmişinde 2 gün üstünde cezası olmaması gerekmektedir. Yeni ödünç kaydı için bu cezalarında affedilmesi gerekmektedir.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Anladım</button>
             </div>
         </div>
     </div>

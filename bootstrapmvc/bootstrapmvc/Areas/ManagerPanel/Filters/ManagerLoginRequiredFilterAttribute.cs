@@ -43,7 +43,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Filters
             
             if (filterContext.Result == null || filterContext.Result is HttpUnauthorizedResult)
             {
-                filterContext.Result = new RedirectResult("~/ManagerPanel/Login/Index");
+                filterContext.Result = new RedirectResult("~/ManagerPanel/Default/Index");
             }
         }
 

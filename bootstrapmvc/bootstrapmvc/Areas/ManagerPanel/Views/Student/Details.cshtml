@@ -15,22 +15,19 @@
     int doluluk = (int)((dolu / (double)toplam) * 100);
 
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="/ManagerPanel/Home">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Student")">
-                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-info-circle me-1"></i> Detay
-        </li>
-    </ul>
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Student")">
+                    <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-info-circle me-1"></i> Detay
+            </li>
+        </ol>
+    </nav>
 </div>
 <div class="container mt-3">
     <div class="card">
@@ -113,7 +110,7 @@
                     <div class="collapse" data-bs-parent="#akordiyon" id="collapse1">
                         <div class="card-body">
                             <div class="alert alert-danger" role="alert">
-                                Doluluk oranı %100 olmayan öğrencilerin bilgilerini öğrenci ile görüşerek sonrasında mutlaka doldurunuz.
+                                Doluluk oranı %100 olmayan öğrencilerin bilgilerini öğrenci ile görüşerek doldurunuz.
                             </div>
                         </div>
                     </div>

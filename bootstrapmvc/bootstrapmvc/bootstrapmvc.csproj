@@ -2258,7 +2258,6 @@
     <Content Include="Areas\ManagerPanel\Views\web.config" />
     <Content Include="Areas\ManagerPanel\Views\Login\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Shared\_LayoutPage1.cshtml" />
-    <Content Include="Areas\ManagerPanel\Views\Home\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Book\Index.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Book\Create.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Book\Edit.cshtml" />
@@ -2281,6 +2280,7 @@
     <Content Include="Areas\ManagerPanel\Views\Borrow\StudentHistory.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Borrow\StudentPenalties.cshtml" />
     <Content Include="Areas\ManagerPanel\Views\Default\Index.cshtml" />
+    <Content Include="Areas\ManagerPanel\Views\Home\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />

@@ -4,46 +4,51 @@
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Student")">
-                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Details", "Student", new { id = Model.StudentID })">
-                <i class="fa-solid fa-info-circle me-1"></i> Detay
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.StudentID })">
-                <i class="fa-solid fa-book-open me-1"></i> Kitap Geçmişi
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-coins me-2"></i> Toplam Ceza
-        </li>
-    </ul>
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Student")">
+                    <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Details", "Student", new { id = Model.StudentID })">
+                    <i class="fa-solid fa-info-circle me-1"></i> Detay
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("StudentHistory", "Borrow", new { id = Model.StudentID })">
+                    <i class="fa-solid fa-book-open me-1"></i> Kitap Geçmişi
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-coins me-2"></i> Toplam Ceza
+            </li>
+        </ol>
+    </nav>
 </div>
-
-<div class="container mt-5">
-    <h3>
-        <strong>@Model.StudentName </strong>
-        <strong>@Model.StudentSurname </strong>
-    </h3>
-    <hr />
-    <h4>Toplam Ceza Tutarı => <span class="text-danger">@Model.TotalPenalty.ToString("C")</span></h4>
-
-    <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.StudentID })" class="btn btn-secondary mt-3">
-        <i class="fa-solid fa-arrow-left me-2"></i> Geri Dön
-    </a>
-    <a href="@Url.Action("Index", "BlackList")" class="btn btn-secondary mt-3">
-        Ceza/Af Sayfasına Git <i class="fa-solid fa-arrow-right ms-2"></i>
-    </a>
+<div class="container mt-3">
+    <div class="card shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+            <h3>
+                <strong>@Model.StudentName</strong>
+                <strong>@Model.StudentSurname</strong>
+            </h3>
+        </div>
+        <div class="card-body">
+            <h4>
+                Toplam Ceza Tutarı&nbsp;
+                <span class="text-danger fw-bold">@Model.TotalPenalty.ToString("C")</span>
+            </h4>
+            <div class="mt-4">
+                <a href="@Url.Action("StudentHistory", "Borrow", new { id = Model.StudentID })" class="btn btn-outline-danger me-2">
+                    <i class="fa-solid fa-arrow-left me-2"></i> Geri Dön
+                </a>
+                <a href="@Url.Action("Index", "BlackList")" class="btn btn-outline-danger">
+                    Ceza/Af Sayfasına Git <i class="fa-solid fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

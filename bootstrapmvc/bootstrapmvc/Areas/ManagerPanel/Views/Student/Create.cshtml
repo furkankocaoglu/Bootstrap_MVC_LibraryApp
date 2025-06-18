@@ -4,25 +4,21 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="/ManagerPanel/Home">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Student")">
-                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-user-plus me-1"></i> Yeni Öğrenci Ekle
-        </li>
-    </ul>
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Student")">
+                    <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-user-plus me-1"></i> Yeni Öğrenci Ekle
+            </li>
+        </ol>
+    </nav>
 </div>
-
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="card">
         <div class="card-header">
             <h4 class="card-title float-start">
@@ -104,8 +100,7 @@
                     @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
                 </div>
 
-                <button type="submit" class="btn btn-outline-success">
-                    <i class="fa-solid fa-user-plus"></i> Öğrenci Ekle
+                <button type="submit" class="btn btn-outline-success"> Öğrenci Ekle
                 </button>
             }
         </div>

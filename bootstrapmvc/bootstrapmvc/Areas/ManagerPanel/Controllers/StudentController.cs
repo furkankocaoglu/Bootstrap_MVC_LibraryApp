@@ -68,6 +68,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 try
                 {
                     db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                    db.Entry(model).Property(x => x.RegistrationDate).IsModified = false;
                     db.SaveChanges();
                     TempData["mesaj"] = "Öğrenci güncelleme başarılı";
                     return RedirectToAction("Index", "Student");

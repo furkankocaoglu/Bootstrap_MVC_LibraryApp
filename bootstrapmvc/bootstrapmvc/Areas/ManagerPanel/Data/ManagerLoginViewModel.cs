@@ -10,13 +10,13 @@ namespace bootstrapmvc.Areas.ManagerPanel.Data
     {
         [Display(Name = "E-Posta")]
         [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Mail boş!")]
+        [Required(ErrorMessage = "Mail boş bırakılamaz")]
         [StringLength(maximumLength: 200, MinimumLength = 5, ErrorMessage = "Bu alan 5 - 200 karakter arasında olabilir")]
         public string Mail { get; set; }
 
         [Display(Name = "Şifre")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Şifre boş! ")]
+        [Required(ErrorMessage = "Şifre boş bırakılamaz ")]
         [StringLength(maximumLength: 30, MinimumLength = 5, ErrorMessage = "Bu alan 5 - 30 karakter arasında olabilir")]
         public string Password { get; set; }
 

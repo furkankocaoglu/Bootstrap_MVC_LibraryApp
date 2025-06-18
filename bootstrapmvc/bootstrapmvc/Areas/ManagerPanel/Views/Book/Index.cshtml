@@ -8,18 +8,6 @@
     var db = new bootstrapmvc.Models.Model1();
     var deletedCount = db.Books.Count(x => x.IsDeleted);
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-book me-1"></i> Kitap Listesi
-        </li>
-    </ul>
-</div>
 @if (TempData["mesaj"] != null)
 {
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -27,8 +15,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
-
-<div class="container mt-5">
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-book me-1"></i> Kitap Listesi
+            </li>
+        </ol>
+    </nav>
+</div>
+<div class="container mt-3">
     <div class="card">
         <div class="card-header">
             <a href="@Url.Action("_Index", "Book")" class="btn btn-outline-danger float-start">

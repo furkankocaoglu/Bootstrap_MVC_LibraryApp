@@ -4,29 +4,25 @@
     ViewBag.Title = "StudentHistory";
     Layout = "~/Areas/ManagerPanel/Views/Shared/_LayoutPage1.cshtml";
 }
-<div class="container mt-3">
-    <ul class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Home", new { area = "ManagerPanel" })">
-                <i class="fa-solid fa-house me-1"></i> Anasayfa
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Index", "Student")">
-                <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
-            </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="@Url.Action("Details", "Student", new { id = Model.StudentID })">
-                <i class="fa-solid fa-info-circle me-1"></i> Detay
-            </a>
-        </li>
-        <li class="breadcrumb-item active">
-            <i class="fa-solid fa-book-open me-1"></i> Kitap Geçmişi
-        </li>
-    </ul>
+<div class="container mt-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Index", "Student")">
+                    <i class="fa-solid fa-user-graduate me-1"></i> Öğrenci Listesi
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="link-body-emphasis text-decoration-none" href="@Url.Action("Details", "Student", new { id = Model.StudentID })">
+                    <i class="fa-solid fa-info-circle me-1"></i> Detay
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fa-solid fa-book-open me-1"></i> Kitap Geçmişi
+            </li>
+        </ol>
+    </nav>
 </div>
-
 <div class="container mt-3">
     <div class="card">
         <div class="card-header">
@@ -51,6 +47,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th><i class="fa-solid fa-hashtag me-1"></i> ID</th>
                             <th><i class="fa-solid fa-book-open me-1"></i> Kitap</th>
                             <th><i class="fa-solid fa-calendar-plus me-1"></i> Aldığı Tarih</th>
                             <th><i class="fa-solid fa-calendar-check me-1"></i> Taahhüt Tarihi</th>
@@ -104,6 +101,7 @@
                             }
 
                             <tr class="@rowClass">
+                                <td>@item.ID</td>
                                 <td>@item.BookName</td>
                                 <td>@item.BorrowDate.ToString("dd.MM.yyyy")</td>
                                 <td>@item.DueDate.ToString("dd.MM.yyyy")</td>

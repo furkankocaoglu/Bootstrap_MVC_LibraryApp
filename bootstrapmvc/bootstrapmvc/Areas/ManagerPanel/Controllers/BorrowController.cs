@@ -199,6 +199,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             var borrowDetails = db.Borrows.Where(b => b.StudentID == id).Select(b => new BorrowDetailViewModel
             {
+                ID = b.ID,
                 BookName = b.Book.Name,
                 BorrowDate = b.BorrowDate,
                 DueDate = b.DueDate,
