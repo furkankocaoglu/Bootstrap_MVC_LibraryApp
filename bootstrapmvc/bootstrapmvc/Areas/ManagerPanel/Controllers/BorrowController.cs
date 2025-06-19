@@ -15,9 +15,16 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     public class BorrowController : Controller
     {
         Model1 db = new Model1();
-        public ActionResult Index()
+        public ActionResult Index(string searchName)
         {
-            var borrows = db.Borrows.Where(b => !b.IsReturned).Select(b => new BorrowViewModel
+            var searchBorrows = db.Borrows.Where(b => !b.IsReturned);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                searchBorrows = searchBorrows.Where(b =>b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName));
+            }
+
+            var borrows = searchBorrows.Select(b => new BorrowViewModel
             {
                 ID = b.ID,
                 StudentName = b.Student.Name,
@@ -29,6 +36,8 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 IsReturned = b.IsReturned
 
             }).ToList();
+
+            ViewBag.SearchName = searchName;
 
             return View(borrows);
         }

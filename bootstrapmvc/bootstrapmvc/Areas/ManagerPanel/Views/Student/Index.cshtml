@@ -37,6 +37,15 @@
                 <i class="fa fa-plus"></i> Yeni Öğrenci Ekle
             </a>
         </div>
+        @using (Html.BeginForm("Index", "Student", FormMethod.Get))
+        {
+            <div class="input-group mt-2 mb-2 px-3">
+                <input type="text" name="searchName" class="form-control" placeholder="Öğrenci ismine göre ara" value="@(ViewBag.SearchName ?? "")" />
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        }
         <div class="card-footer">
             <span class="text-success fw-semibold d-print-none">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor

@@ -13,13 +13,35 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     public class StudentController : Controller
     {
         Model1 db = new Model1();
-        public ActionResult Index()
+        public ActionResult Index(string searchName)
         {
-            return View(db.Students.Where(x => x.IsDeleted == false).ToList());
+            var query = db.Students.Where(x => x.IsDeleted == false);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query = query.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
+            }
+
+            var students = query.ToList();
+
+            ViewBag.SearchName = searchName;  
+
+            return View(students);
         }
-        public ActionResult _Index()
+        public ActionResult _Index(string searchName)
         {
-            return View(db.Students.Where(x => x.IsDeleted == true).ToList());
+            var query = db.Students.Where(x => x.IsDeleted == true);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query = query.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
+            }
+
+            var students = query.ToList();
+
+            ViewBag.SearchName = searchName;
+
+            return View(students);
         }
         [HttpGet]
         public ActionResult Create()

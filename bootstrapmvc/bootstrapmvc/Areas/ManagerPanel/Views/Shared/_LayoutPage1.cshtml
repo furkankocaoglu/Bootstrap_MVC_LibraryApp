@@ -5,8 +5,22 @@
     {
         m = Session["ManagerSession"] as Manager;
     }
-}
 
+    string badgeClass = "bg-secondary";
+    string iconClass = "fa-solid fa-user";
+
+    switch (m.managerRole.Name)
+    {
+        case "Admin":
+            badgeClass = "bg-primary";
+            iconClass = "fa-solid fa-crown";
+            break;
+        case "Moderatör":
+            badgeClass = "bg-primary";
+            iconClass = "fa-solid fa-shield-halved"; 
+            break;
+    }
+}
 <!DOCTYPE html>
 
 <html>
@@ -19,6 +33,9 @@
 </head>
 <body>
     <div class="alert alert-primary">
+        <span class="badge @badgeClass me-2">
+            <i class="@iconClass"></i> @m.managerRole.Name
+        </span>
         <strong><i class="fa-solid fa-user"></i> Hoşgeldin @m.Name</strong>
         <a href="@Url.Action("LogOut", "Login")"
            class="btn btn-outline-dark btn-sm float-end rounded"
@@ -95,6 +112,6 @@
     </div>
     <div class="clearfix"></div>
     @RenderSection("scripts", false)
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

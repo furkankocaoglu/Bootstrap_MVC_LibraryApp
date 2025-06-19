@@ -16,13 +16,35 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     {
         Model1 db = new Model1();
 
-        public ActionResult Index()
+        public ActionResult Index(string searchName)
         {
-            return View(db.Books.Where(x => x.IsDeleted == false).ToList());
+            var query = db.Books.Where(x => x.IsDeleted == false);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query = query.Where(x => x.Name.Contains(searchName));
+            }
+
+            var books = query.ToList();
+
+            ViewBag.SearchTitle = searchName; 
+
+            return View(books);
         }
-        public ActionResult _Index()
+        public ActionResult _Index(string searchName)
         {
-            return View(db.Books.Where(x => x.IsDeleted == true).ToList());
+            var query = db.Books.Where(x => x.IsDeleted == true);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                query = query.Where(x => x.Name.Contains(searchName));
+            }
+
+            var books = query.ToList();
+
+            ViewBag.SearchTitle = searchName;
+
+            return View(books);
         }
         [HttpGet]
         public ActionResult Create()

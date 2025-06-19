@@ -65,13 +65,32 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             return View(model);
         }
-        public ActionResult BlackListStats()
+        public ActionResult BlackListStats(string searchName)
         {
-            var karaListe = db.Borrows.Where(b => b.Penalty > 0).Include("Student").ToList();
+            var allKaraListe = db.Borrows.Where(b => b.Penalty > 0).ToList();
 
-            ViewBag.KaraListeOgrenciSayisi = karaListe.Select(b => b.StudentID).Distinct().Count();
+            var karaListeQuery = db.Borrows.Where(b => b.Penalty > 0);
 
-            ViewBag.ToplamCezaTutari = karaListe.Sum(b => b.Penalty);
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                karaListeQuery = karaListeQuery.Where(b => (b.Student.Name + " " + b.Student.Surname).Contains(searchName));
+            }
+
+            var karaListe = karaListeQuery.Include(b => b.Student).Include(b => b.Book).ToList();
+
+            ViewBag.KaraListeOgrenciSayisi = allKaraListe.Select(b => b.StudentID).Distinct().Count();
+            ViewBag.ToplamCezaTutari = allKaraListe.Sum(b => b.Penalty);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                ViewBag.FiltreliCezaTutari = karaListeQuery.Sum(b => b.Penalty);
+            }
+            else
+            {
+                ViewBag.FiltreliCezaTutari = 0;  
+            }
+
+            ViewBag.SearchName = searchName;
 
             return View(karaListe);
         }

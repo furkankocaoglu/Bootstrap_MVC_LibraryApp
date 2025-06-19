@@ -37,6 +37,15 @@
                 <i class="fa fa-check-double"></i> Tüm kitapları aktif et
             </a>
         </div>
+        @using (Html.BeginForm("_Index", "Book", FormMethod.Get))
+        {
+            <div class="input-group mt-2 mb-2 px-3">
+                <input type="text" name="searchName" class="form-control" placeholder="Kitap ismine göre ara" value="@(ViewBag.SearchName ?? "")" />
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        }
         <div class="card-footer">
             <span class="text-success fw-semibold">
                 <i class="fa-solid fa-database me-1"></i> @Model.Count kayıt listeleniyor

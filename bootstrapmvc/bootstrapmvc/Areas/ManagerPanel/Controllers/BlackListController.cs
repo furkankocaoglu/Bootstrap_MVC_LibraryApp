@@ -13,9 +13,16 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     public class BlackListController : Controller
     {
         Model1 db = new Model1();
-        public ActionResult Index()
+        public ActionResult Index(string searchName)
         {
-            var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0).Select(b => new BlackListPenaltyViewModel
+            var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                cezaKontrol = cezaKontrol.Where(b =>(b.Student.Name + " " + b.Student.Surname).ToLower().Contains(searchName.ToLower()));
+            }
+
+            var model = cezaKontrol.Select(b => new BlackListPenaltyViewModel
             {
                 BorrowID = b.ID,
                 Penalty = b.Penalty,
@@ -29,7 +36,9 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             }).ToList();
 
-            return View(cezaKontrol);          
+            ViewBag.SearchName = searchName;
+
+            return View(model);
         }
 
         public ActionResult ForgivePenalty(int id)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
