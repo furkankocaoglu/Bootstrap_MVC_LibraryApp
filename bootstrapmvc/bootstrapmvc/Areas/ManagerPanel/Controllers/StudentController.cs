@@ -15,14 +15,14 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index(string searchName)
         {
-            var query = db.Students.Where(x => x.IsDeleted == false);
+            var studentSearchName = db.Students.Where(x => x.IsDeleted == false);
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                query = query.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
+                studentSearchName = studentSearchName.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
             }
 
-            var students = query.ToList();
+            var students = studentSearchName.ToList();
 
             ViewBag.SearchName = searchName;  
 
@@ -30,14 +30,14 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult _Index(string searchName)
         {
-            var query = db.Students.Where(x => x.IsDeleted == true);
+            var studentSearchName = db.Students.Where(x => x.IsDeleted == true);
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                query = query.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
+                studentSearchName = studentSearchName.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
             }
 
-            var students = query.ToList();
+            var students = studentSearchName.ToList();
 
             ViewBag.SearchName = searchName;
 

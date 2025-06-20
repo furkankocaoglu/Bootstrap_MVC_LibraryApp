@@ -73,7 +73,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                karaListeQuery = karaListeQuery.Where(b => (b.Student.Name + " " + b.Student.Surname).Contains(searchName));
+                karaListeQuery = karaListeQuery.Where(b => b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName));
             }
 
             var karaListe = karaListeQuery.Include(b => b.Student).Include(b => b.Book).ToList();
@@ -83,11 +83,11 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                ViewBag.FiltreliCezaTutari = karaListeQuery.Sum(b => b.Penalty);
+                ViewBag.FiltreliCezaTutari = karaListeQuery.Sum(b => (decimal?)b.Penalty) ?? 0;
             }
             else
             {
-                ViewBag.FiltreliCezaTutari = 0;  
+                ViewBag.FiltreliCezaTutari = 0;
             }
 
             ViewBag.SearchName = searchName;

@@ -19,10 +19,10 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                cezaKontrol = cezaKontrol.Where(b =>(b.Student.Name + " " + b.Student.Surname).ToLower().Contains(searchName.ToLower()));
+                cezaKontrol = cezaKontrol.Where(b => b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName));
             }
 
-            var model = cezaKontrol.Select(b => new BlackListPenaltyViewModel
+            var blackList = cezaKontrol.Select(b => new BlackListPenaltyViewModel
             {
                 BorrowID = b.ID,
                 Penalty = b.Penalty,
@@ -38,7 +38,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             ViewBag.SearchName = searchName;
 
-            return View(model);
+            return View(blackList);
         }
 
         public ActionResult ForgivePenalty(int id)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
@@ -77,6 +77,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             }
 
             var cezalar = db.Borrows.Where(b => b.Penalty > 0).ToList();
+
             foreach (var c in cezalar)
             {
                 c.Penalty = 0;

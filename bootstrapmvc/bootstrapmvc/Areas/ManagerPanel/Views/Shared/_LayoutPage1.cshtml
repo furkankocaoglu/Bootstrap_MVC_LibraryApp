@@ -33,15 +33,17 @@
 </head>
 <body>
     <div class="alert alert-primary">
-        <span class="badge @badgeClass me-2">
-            <i class="@iconClass"></i> @m.managerRole.Name
-        </span>
         <strong><i class="fa-solid fa-user"></i> Hoşgeldin @m.Name</strong>
-        <a href="@Url.Action("LogOut", "Login")"
-           class="btn btn-outline-dark btn-sm float-end rounded"
-           onclick="return confirm('Çıkış yapmak istediğinize emin misiniz?');">
-            <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
-        </a>
+        <div class="float-end">
+            <span class="badge @badgeClass me-2">
+                <i class="@iconClass"></i> @m.managerRole.Name
+            </span>
+            <a href="@Url.Action("LogOut", "Login")"
+               class="btn btn-outline-dark btn-sm"
+               onclick="return confirm('Çıkış yapmak istediğinize emin misiniz?');">
+                <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+            </a>
+        </div>
     </div>
     <div class="container mt-3">
         <ul class="nav">
