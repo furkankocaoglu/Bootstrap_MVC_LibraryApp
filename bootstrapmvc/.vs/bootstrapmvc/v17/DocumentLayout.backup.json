@@ -3,71 +3,79 @@
   "WorkspaceRootPath": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\blackliststats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\blackliststats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\borrow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\borrow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\borrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\borrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\borrowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\student\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\blackliststats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\blackliststats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\borrow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\borrow\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\blacklist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\blacklist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\blacklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\controllers\\blacklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\controllers\\blacklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|c:\\users\\kocao\\onedrive\\belgeler\\github\\bootstrap_mvc\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\areas\\managerpanel\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11C0F8D1-1DF6-45DE-8B2E-446F2E8E4A54}|bootstrapmvc\\bootstrapmvc.csproj|solutionrelative:bootstrapmvc\\areas\\managerpanel\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -78,154 +86,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T09:42:28.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "_Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:48:55.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:48:47.477Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T14:38:28.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\_Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T14:37:39.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "StudentController.cs",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
               "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAADwvysAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAADwvzcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T08:48:14.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BlackListStats.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:48:05.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:47:26.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "BorrowController.cs",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BorrowController.cs",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BorrowController.cs",
               "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BorrowController.cs",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BorrowController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwBMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T08:47:18.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
               "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAA5wCUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T08:43:02.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T18:39:10.659Z",
+              "DocumentIndex": 9,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:39:09.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:45:24.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-20T08:42:20.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Index.cshtml",
@@ -238,33 +194,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
-              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
-              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BookController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T08:39:09.867Z",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T09:42:28.416Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Borrow\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:47:26.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-20T08:32:06.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BlackListStats.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Dashboard\\BlackListStats.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:48:05.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Default\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-19T18:39:10.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:48:47.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Student\\_Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:48:55.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
+              "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
+              "ToolTip": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
+              "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Book\\_Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:45:24.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "BlackListController.cs",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
@@ -272,12 +301,11 @@
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Controllers\\BlackListController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:24:50.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:24:50.249Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
@@ -285,12 +313,11 @@
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\BlackList\\Index.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-19T23:25:02.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:25:02.485Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "_LayoutPage1.cshtml",
               "DocumentMoniker": "C:\\Users\\kocao\\OneDrive\\Belgeler\\GitHub\\Bootstrap_MVC\\bootstrapmvc\\bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
               "RelativeDocumentMoniker": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
@@ -298,8 +325,7 @@
               "RelativeToolTip": "bootstrapmvc\\Areas\\ManagerPanel\\Views\\Shared\\_LayoutPage1.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-20T08:32:04.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T08:32:04.528Z"
             }
           ]
         }
