@@ -15,33 +15,29 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index(string searchName)
         {
-            var studentSearchName = db.Students.Where(x => x.IsDeleted == false);
+            List<Student> studentSearchName = db.Students.Where(x => x.IsDeleted == false).ToList();
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                studentSearchName = studentSearchName.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
+                studentSearchName = studentSearchName.Where(x =>(!string.IsNullOrEmpty(x.Name) && x.Name.Contains(searchName)) || (!string.IsNullOrEmpty(x.Surname) && x.Surname.Contains(searchName))).ToList();
             }
-
-            var students = studentSearchName.ToList();
-
-            ViewBag.SearchName = searchName;  
-
-            return View(students);
-        }
-        public ActionResult _Index(string searchName)
-        {
-            var studentSearchName = db.Students.Where(x => x.IsDeleted == true);
-
-            if (!string.IsNullOrEmpty(searchName))
-            {
-                studentSearchName = studentSearchName.Where(x => x.Name.Contains(searchName) || x.Surname.Contains(searchName));
-            }
-
-            var students = studentSearchName.ToList();
 
             ViewBag.SearchName = searchName;
 
-            return View(students);
+            return View(studentSearchName);
+        }
+        public ActionResult _Index(string searchName)
+        {
+            List<Student> studentSearchName = db.Students.Where(x => x.IsDeleted == true).ToList();
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                studentSearchName = studentSearchName.Where(x => (!string.IsNullOrEmpty(x.Name) && x.Name.Contains(searchName)) || (!string.IsNullOrEmpty(x.Surname) && x.Surname.Contains(searchName))).ToList();
+            }
+
+            ViewBag.SearchName = searchName;
+
+            return View(studentSearchName);
         }
         [HttpGet]
         public ActionResult Create()
@@ -134,20 +130,22 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult ActivateAll()
         {
-            var silinmisOgrenciler = db.Students.Where(c => c.IsDeleted == true).ToList();
+            List<Student> silinmisOgrenciler = db.Students.Where(c => c.IsDeleted == true).ToList();
 
-            foreach (var ogrenci in silinmisOgrenciler)
+            foreach (Student ogrenci in silinmisOgrenciler)
             {
                 ogrenci.IsActive = true;
                 ogrenci.IsDeleted = false;
             }
+
             db.SaveChanges();
+
             TempData["mesaj"] = "Tüm öğrenciler başarıyla aktifleştirildi.";
             return RedirectToAction("Index", "Student");
         }
         public ActionResult Details(int? id)
         {
-            var student = db.Students.Find(id);
+            Student student = db.Students.Find(id);
 
             return View(student);
         }

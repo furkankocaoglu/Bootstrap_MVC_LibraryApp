@@ -17,14 +17,14 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index(string searchName)
         {
-            var searchBorrows = db.Borrows.Where(b => !b.IsReturned);
+            List<Borrow> searchBorrows = db.Borrows.Where(b => !b.IsReturned).Include(b => b.Student).Include(b => b.Book).ToList();
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                searchBorrows = searchBorrows.Where(b =>b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName));
+                searchBorrows = searchBorrows.Where(b => b.Student != null && ((!string.IsNullOrEmpty(b.Student.Name) && b.Student.Name.Contains(searchName)) ||(!string.IsNullOrEmpty(b.Student.Surname) && b.Student.Surname.Contains(searchName)))).ToList();
             }
 
-            var borrows = searchBorrows.Select(b => new BorrowViewModel
+            List<BorrowViewModel> borrows = searchBorrows.Select(b => new BorrowViewModel
             {
                 ID = b.ID,
                 StudentName = b.Student.Name,
@@ -44,7 +44,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
         public ActionResult _Index()
         {
-            var borrows = db.Borrows.Where(b => b.IsReturned).Select(b => new BorrowViewModel
+            List<BorrowViewModel> borrows = db.Borrows.Where(b => b.IsReturned).Select(b => new BorrowViewModel
             {
                 ID = b.ID,
                 StudentName = b.Student.Name,
@@ -58,31 +58,32 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             }).ToList();
 
-            return View(borrows);
+            return View(borrows);   
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
+            List<int> oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
 
-            var aktifKitaplar = db.Books.Where(b => b.IsActive && !b.IsDeleted).ToList();
-            var kitaplar = new List<Book>();
+            List<Book> aktifKitaplar = db.Books.Where(b => b.IsActive && !b.IsDeleted).ToList();
 
-            foreach (var kitap in aktifKitaplar)
+            List<Book> musaitKitaplar = new List<Book>();
+            foreach (Book kitap in aktifKitaplar)
             {
-                bool oduncteMi = db.Borrows.FirstOrDefault(b => !b.IsReturned && b.BookID == kitap.ID) != null;
-
-                if (!oduncteMi)
+                if (!oduncteOlanKitap.Contains(kitap.ID))
                 {
-                    kitaplar.Add(kitap);
+                    musaitKitaplar.Add(kitap);
                 }
             }
 
-            ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber");
-            ViewBag.BookID = new SelectList(kitaplar, "ID", "Name");
+            List<Student> aktifOgrenciler = db.Students.Where(s => s.IsActive).ToList();
+
+            ViewBag.StudentID = new SelectList(aktifOgrenciler, "ID", "StudentNumber");
+            ViewBag.BookID = new SelectList(musaitKitaplar, "ID", "Name");
 
             return View();
+
         }
 
         [HttpPost]
@@ -102,12 +103,12 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
                     DateTime today = DateTime.Today;
 
-                    bool gecikmisOduncVar = false;
-                    var borrows = db.Borrows.Where(b => b.StudentID == model.StudentID && !b.IsReturned).ToList();
+                    List<Borrow> borrows = db.Borrows.Where(b => b.StudentID == model.StudentID && !b.IsReturned).ToList();
 
-                    foreach (var b in borrows)
+                    bool gecikmisOduncVar = false;
+                    foreach (Borrow b in borrows)
                     {
-                        if (b.DueDate.Date < today)
+                        if (b.DueDate.Date < today)  
                         {
                             gecikmisOduncVar = true;
                             break;
@@ -136,25 +137,28 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
             }
 
-            var oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
+            // Model doğrulanmadığında veya hata oluştuğunda dropdownları tekrar doldur
+            List<int> oduncteOlanKitap = db.Borrows.Where(b => !b.IsReturned).Select(b => b.BookID).ToList();
 
-            var aktifKitaplarPost = db.Books.Where(b => b.IsActive && !b.IsDeleted).ToList();
+            List<Book> aktifKitaplar = db.Books.Where(b => b.IsActive && !b.IsDeleted).ToList();
 
-            var kitaplarPost = new List<Book>();
-
-            foreach (var kitap in aktifKitaplarPost)
+            List<Book> musaitKitaplar = new List<Book>();
+            foreach (Book kitap in aktifKitaplar)
             {
                 if (!oduncteOlanKitap.Contains(kitap.ID))
                 {
-                    kitaplarPost.Add(kitap);
+                    musaitKitaplar.Add(kitap);
                 }
             }
 
-            ViewBag.StudentID = new SelectList(db.Students.Where(s => s.IsActive), "ID", "StudentNumber", model.StudentID);
-            ViewBag.BookID = new SelectList(kitaplarPost, "ID", "Name", model.BookID);
+            List<Student> aktifOgrenciler = db.Students.Where(s => s.IsActive).ToList();
+
+            ViewBag.StudentID = new SelectList(aktifOgrenciler, "ID", "StudentNumber", model.StudentID);
+            ViewBag.BookID = new SelectList(musaitKitaplar, "ID", "Name", model.BookID);
 
             return View(model);
         }
+        
 
         public ActionResult Return(int? id)
         {
@@ -190,7 +194,9 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         {
             DateTime today = DateTime.Today;
 
-            var gecmis = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned).ToList().Where(b => b.DueDate.Date < today).ToList();
+            List<Borrow> tumBorrows = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned).ToList();
+
+            List<Borrow> gecmis = tumBorrows.Where(b => b.DueDate.Date < today).ToList();
 
             return View(gecmis);
         }
@@ -198,15 +204,17 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         {
             DateTime today = DateTime.Today;
 
-            var gecmemis = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned).ToList().Where(b => b.DueDate.Date >= today).ToList();
+            List<Borrow> tumBorrows = db.Borrows.Include(b => b.Student).Include(b => b.Book).Where(b => !b.IsReturned).ToList();
+
+            List<Borrow> gecmemis = tumBorrows.Where(b => b.DueDate.Date >= today).ToList();
 
             return View(gecmemis);
         }
         public ActionResult StudentHistory(int? id)
         {
-            var student = db.Students.FirstOrDefault(s => s.ID == id);
+            Student student = db.Students.FirstOrDefault(s => s.ID == id);
 
-            var borrowDetails = db.Borrows.Where(b => b.StudentID == id).Select(b => new BorrowDetailViewModel
+            List<BorrowDetailViewModel> borrowDetails = db.Borrows.Where(b => b.StudentID == id).Select(b => new BorrowDetailViewModel
             {
                 ID = b.ID,
                 BookName = b.Book.Name,
@@ -215,10 +223,9 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 ReturnDate = b.ReturnDate,
                 Penalty = b.Penalty,
                 IsReturned = b.IsReturned
-
             }).ToList();
 
-            var viewModel = new StudentBorrowHistoryViewModel
+            StudentBorrowHistoryViewModel viewModel = new StudentBorrowHistoryViewModel
             {
                 StudentID = student.ID,
                 StudentName = student.Name,
@@ -231,11 +238,11 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult StudentPenalties(int? id)
         {
-            var student = db.Students.FirstOrDefault(s => s.ID == id);
+            Student student = db.Students.FirstOrDefault(s => s.ID == id);
 
-            var borrowDetails = db.Borrows.Where(b => b.StudentID == id).Select(b => new BorrowDetailViewModel
+            List<BorrowDetailViewModel> borrowDetails = db.Borrows.Where(b => b.StudentID == id).Select(b => new BorrowDetailViewModel
             {
-                BookName = b.Book.Name, 
+                BookName = b.Book.Name,
                 BorrowDate = b.BorrowDate,
                 DueDate = b.DueDate,
                 ReturnDate = b.ReturnDate,
@@ -244,9 +251,9 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             }).ToList();
 
-            var totalPenalty = borrowDetails.Where(b => b.IsReturned && b.Penalty > 0).Sum(b => b.Penalty);
+            decimal totalPenalty = borrowDetails.Where(b => b.IsReturned && b.Penalty > 0).Sum(b => b.Penalty);
 
-            var viewModel = new StudentBorrowHistoryViewModel
+            StudentBorrowHistoryViewModel viewModel = new StudentBorrowHistoryViewModel
             {
                 StudentID = student.ID,
                 StudentName = student.Name,

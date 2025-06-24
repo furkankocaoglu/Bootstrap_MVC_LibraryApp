@@ -15,14 +15,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index(string searchName)
         {
-            var cezaKontrol = db.Borrows.Where(b => b.Penalty > 0);
-
-            if (!string.IsNullOrEmpty(searchName))
-            {
-                cezaKontrol = cezaKontrol.Where(b => b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName));
-            }
-
-            var blackList = cezaKontrol.Select(b => new BlackListPenaltyViewModel
+            List<BlackListPenaltyViewModel> blackList = db.Borrows.Where(b => b.Penalty > 0 && (string.IsNullOrEmpty(searchName) || b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName))).Select(b => new BlackListPenaltyViewModel
             {
                 BorrowID = b.ID,
                 Penalty = b.Penalty,
@@ -33,8 +26,8 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 DueDate = b.DueDate,
                 ReturnDate = b.ReturnDate,
                 StudentID = b.Student.ID,
-
-            }).ToList();
+            })
+           .ToList();
 
             ViewBag.SearchName = searchName;
 
@@ -42,8 +35,8 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
 
         public ActionResult ForgivePenalty(int id)// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
-        {
-            var manager = Session["ManagerSession"] as Manager;
+        {           
+            Manager manager = Session["ManagerSession"] as Manager;
 
             if (manager == null || manager.ManagerRole_ID != 1)
             {
@@ -51,7 +44,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 return RedirectToAction("Index", "BlackList");
             }
 
-            var ceza = db.Borrows.FirstOrDefault(b => b.ID == id && b.Penalty > 0);
+            Borrow ceza = db.Borrows.FirstOrDefault(b => b.ID == id && b.Penalty > 0);
 
             if (ceza == null)
             {
@@ -65,10 +58,11 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             TempData["mesaj"] = "Seçilen ceza affedildi.";
             return RedirectToAction("Index", "BlackList");
         }
+        
 
         public ActionResult ForgiveAllPenalties()// admin ve mod rollerimiz var toplu affetme ve tekil affetme işlemleri sadece admin tarafından sağlanmaktadır.
         {
-            var manager = Session["ManagerSession"] as Manager;
+            Manager manager = Session["ManagerSession"] as Manager;
 
             if (manager == null || manager.ManagerRole_ID != 1)
             {
@@ -76,12 +70,13 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 return RedirectToAction("Index", "BlackList");
             }
 
-            var cezalar = db.Borrows.Where(b => b.Penalty > 0).ToList();
+            List<Borrow> cezalar = db.Borrows.Where(b => b.Penalty > 0).ToList();
 
-            foreach (var c in cezalar)
+            foreach (Borrow c in cezalar)
             {
                 c.Penalty = 0;
             }
+
             db.SaveChanges();
 
             TempData["mesaj"] = "Tüm öğrencilerin cezaları başarıyla affedildi.";
@@ -89,5 +84,5 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
     }
 
-    
+
 }

@@ -14,54 +14,81 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
     public class DashboardController : Controller
     {
         Model1 db = new Model1();
-        public ActionResult Index()//kitap istatistik
+        public ActionResult Index()
         {
-            var toplam = db.Books.Count();
-            var aktif = db.Books.Count(x => x.IsDeleted == false);
-            var silinmis = db.Books.Count(x => x.IsDeleted == true);
+            int toplam = db.Books.Count();
+            int aktif = db.Books.Count(x => x.IsDeleted == false);
+            int silinmis = db.Books.Count(x => x.IsDeleted == true);
 
             ViewBag.ToplamKitap = toplam;
             ViewBag.AktifKitap = aktif;
             ViewBag.SilinmisKitap = silinmis;
 
-            var model = db.Books.ToList();
+            List<Book> model = db.Books.ToList();
+
             return View(model);
         }
-        public ActionResult _Index()//öğrenci istatistik
+        public ActionResult _Index()
         {
-            var toplamOgrenci = db.Students.Count();
-            var aktifOgrenci = db.Students.Count(x => x.IsDeleted == false);
-            var silinmisOgrenci = db.Students.Count(x => x.IsDeleted == true);
+            int toplamOgrenci = db.Students.Count();
+            int aktifOgrenci = db.Students.Count(x => x.IsDeleted == false);
+            int silinmisOgrenci = db.Students.Count(x => x.IsDeleted == true);
 
             ViewBag.ToplamOgrenci = toplamOgrenci;
             ViewBag.AktifOgrenci = aktifOgrenci;
             ViewBag.SilinmisOgrenci = silinmisOgrenci;
 
-            var ogrenciler = db.Students.ToList();
+            List<Student> ogrenciler = db.Students.ToList();
             return View(ogrenciler);
-
         }
         public ActionResult BorrowStats()
         {
-            var today = DateTime.Today;
+            DateTime today = DateTime.Today;
 
-            var toplamOdunc = db.Borrows.Count();
-            var teslimEdilen = db.Borrows.Count(x => x.IsReturned);
-            var teslimEdilmeyen = db.Borrows.Count(x => !x.IsReturned);
-            var gecikenler = db.Borrows.Count(b => !b.IsReturned && b.DueDate < today);
+            int toplamOdunc = db.Borrows.Count();
+            int teslimEdilen = db.Borrows.Count(x => x.IsReturned);
+            int teslimEdilmeyen = db.Borrows.Count(x => !x.IsReturned);
+            int gecikenler = db.Borrows.Count(b => !b.IsReturned && b.DueDate < today);
 
             ViewBag.ToplamOdunc = toplamOdunc;
             ViewBag.TeslimEdilen = teslimEdilen;
             ViewBag.TeslimEdilmeyen = teslimEdilmeyen;
             ViewBag.Geciken = gecikenler;
 
-            var model = db.Borrows.Include("Student").Include("Book").ToList();
+            List<Borrow> model = db.Borrows.Include("Student").Include("Book").ToList();
 
             return View(model);
         }
         public ActionResult BlackListStats(string searchName)
         {
-            var allKaraListe = db.Borrows.Where(b => b.Penalty > 0).ToList();
+            List<Borrow> allKaraListe = db.Borrows.Where(b => b.Penalty > 0).ToList();
+
+            List<Borrow> karaListeQuery = db.Borrows.Where(b => b.Penalty > 0).Include(b => b.Student).Include(b => b.Book).ToList();
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                karaListeQuery = karaListeQuery.Where(b => b.Student.Name.Contains(searchName) || b.Student.Surname.Contains(searchName)).ToList();
+            }
+
+            List<Borrow> karaListe = karaListeQuery;
+
+            ViewBag.KaraListeOgrenciSayisi = allKaraListe.Select(b => b.StudentID).Distinct().Count();
+            ViewBag.ToplamCezaTutari = allKaraListe.Sum(b => b.Penalty);
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                ViewBag.FiltreliCezaTutari = karaListe.Sum(b => b.Penalty);
+            }
+            else
+            {
+                ViewBag.FiltreliCezaTutari = 0;
+            }
+
+            ViewBag.SearchName = searchName;
+
+            return View(karaListe);
+
+           /*var allKaraListe = db.Borrows.Where(b => b.Penalty > 0).ToList();
 
             var karaListeQuery = db.Borrows.Where(b => b.Penalty > 0);
 
@@ -86,8 +113,11 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
 
             ViewBag.SearchName = searchName;
 
-            return View(karaListe);
+            return View(karaListe); */
+
+
         }
+
 
     }
 

@@ -16,39 +16,38 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         Model1 db = new Model1();
         public ActionResult Index(string searchName)
         {
-            var bookSearch = db.Books.Where(x => x.IsDeleted == false);
+            List<Book> bookSearch = db.Books.Where(x => x.IsDeleted == false).ToList();
 
             if (!string.IsNullOrEmpty(searchName))
             {
-                bookSearch = bookSearch.Where(x => x.Name.Contains(searchName));
+                bookSearch = bookSearch.Where(x => x.Name.Contains(searchName)).ToList();
             }
-
-            var books = bookSearch.ToList();
-
-            ViewBag.SearchName = searchName; 
-
-            return View(books);
-        }
-        public ActionResult _Index(string searchName)
-        {
-            var bookSearch = db.Books.Where(x => x.IsDeleted == true);
-
-            if (!string.IsNullOrEmpty(searchName))
-            {
-                bookSearch = bookSearch.Where(x => x.Name.Contains(searchName));
-            }
-
-            var books = bookSearch.ToList();
 
             ViewBag.SearchName = searchName;
 
-            return View(books);
+            return View(bookSearch);
+
         }
+        public ActionResult _Index(string searchName)
+        {
+            List<Book> bookSearch = db.Books.Where(x => x.IsDeleted == true).ToList();
+
+            if (!string.IsNullOrEmpty(searchName))
+            {
+                bookSearch = bookSearch.Where(x => x.Name.Contains(searchName)).ToList();
+            }
+
+            ViewBag.SearchName = searchName;
+
+            return View(bookSearch);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(Book model)
         {
@@ -69,6 +68,7 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
             }
             return View(model);
         }
+
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -81,8 +81,8 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
                 }
             }
             return RedirectToAction("Index", "Book");
-
         }
+
         [HttpPost]
         public ActionResult Edit(Book model)
         {
@@ -134,16 +134,16 @@ namespace bootstrapmvc.Areas.ManagerPanel.Controllers
         }
         public ActionResult ActivateAll()
         {
-            var silinmisKitaplar = db.Books.Where(c => c.IsDeleted == true).ToList();
+            List<Book> silinmisKitaplar = db.Books.Where(c => c.IsDeleted == true).ToList();
 
-            foreach (var kitap in silinmisKitaplar)
+            foreach (Book kitap in silinmisKitaplar)
             {
                 kitap.IsActive = true;
-                kitap.IsDeleted = false; 
+                kitap.IsDeleted = false;
             }
             db.SaveChanges();
             TempData["mesaj"] = "Tüm kitaplar başarıyla aktifleştirildi.";
-            return RedirectToAction("Index", "Book"); 
+            return RedirectToAction("Index", "Book");
         }
     }
 }
